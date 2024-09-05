@@ -1,0 +1,100 @@
+.landparent{
+    width: 100%;
+   
+    padding-top: 100px;
+}
+.land3main{
+    width: 85vw;
+    padding: 3%;
+    margin: 10vh auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background:url('./../../assets/Land/Rectangle 6.png')100% 100% ;
+}
+.land3main h1{
+    text-align: center;
+    width: 70%;
+    
+}
+.land4main{
+    width: 85vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10vh auto;
+
+}
+.land4card{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 350px;
+    padding: 2%;
+    gap: 5px;
+    justify-content: center;
+}
+.land4card>h1{
+    margin-top: 20px;
+}
+.land4card>img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: red;
+}
+.land5main{
+    background:url('./../../assets/Land/Rectangle.png')no-repeat ;
+    background-size: cover;
+    padding: 4%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+.land5main > div{
+    height: 300px;
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    border-radius: 9px;
+    text-transform: uppercase;
+
+}
+.land5main > div>span{
+    font-family: Plus Jakarta Sans;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 45.36px;
+    text-align: left;
+    color: white;
+    margin-bottom: 10px;
+    border-bottom: 3px solid white;
+
+}
+.land5main > div>p{
+    color: white;
+    font-family: Plus Jakarta Sans;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 800;
+    
+    text-align: center;
+    width: 80%;
+
+}
+.land5card1{
+    background-color: #FF90B2;
+}
+.land5card2{
+    background-color: #7755FF;
+}

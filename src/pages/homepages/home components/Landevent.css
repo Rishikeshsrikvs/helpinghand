@@ -1,0 +1,57 @@
+.landeventparent{
+    height: 70vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+
+
+
+}
+.landeventparent >h1{
+    text-transform: uppercase;
+}
+.lecon{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+}
+.lecon >div{
+    width: 30%;
+    height: 415px;
+}
+.lecon >div>img{
+    width: 100%;
+    height: 100%;
+}
+.lecard1{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1% 2%;
+    gap: 8px;
+    border-radius: 10px;
+    background-color: #000000;
+}
+.lecard1 >h1{
+    text-align: center;
+}
+.letext{
+    background-color: white;
+    border-radius: 6px;
+    flex: 1;
+    padding: 1%;
+}
+.ledown{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.letext >p{
+    color: black;
+}
