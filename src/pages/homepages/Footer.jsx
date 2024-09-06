@@ -28,16 +28,16 @@ const Footer = () => {
                 <h1>“ No one has ever become poor by giving ”</h1>
                 <p>Your contribution provides vital support and transforms lives. Every gift makes a difference.</p>
                 <div className="footbtn">
-                    <button>Donate Now</button>
+                    <Link to="/donate">Donate Now</Link>
                 </div>
                 
                 <ul className='footul navul'>
                     <li><NavLink to="/" className={({ isActive }) => (isActive ? 'active-link' : '')}>Home</NavLink></li>
                     <li><NavLink to="About" className={({ isActive }) => (isActive ? 'active-link' : '')}>About Us</NavLink></li>
-                    <li><NavLink to="Menu" className={({ isActive }) => (isActive ? 'active-link' : '')}>Menu</NavLink></li>
-                    <li><NavLink to="Services" className={({ isActive }) => (isActive ? 'active-link' : '')}>Services</NavLink></li>
-                    <li><NavLink to="Gallery" className={({ isActive }) => (isActive ? 'active-link' : '')}>Galllery</NavLink></li>
-          
+                    <li><NavLink to="ourprogram" className={({ isActive }) => (isActive ? 'active-link' : '')}>Our Programs</NavLink></li>
+                    <li><NavLink to="media" className={({ isActive }) => (isActive ? 'active-link' : '')}>Media</NavLink></li>
+                    <li><NavLink to="getinvolved" className={({ isActive }) => (isActive ? 'active-link' : '')}>Get Involved</NavLink></li>
+            
                 </ul>
                 
           </div>

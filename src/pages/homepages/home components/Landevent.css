@@ -1,57 +1,92 @@
-.landeventparent{
-    height: 70vh;
-    
+.landeventparent {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-
-
-
-}
-.landeventparent >h1{
+    margin-top: vh;
+  }
+  
+  .landeventparent > h1 {
     text-transform: uppercase;
-}
-.lecon{
+  }
+  
+  .lecon {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-
-}
-.lecon >div{
-    width: 30%;
-    height: 415px;
-}
-.lecon >div>img{
+    margin-top: 4vh;
+  }
+  
+  .leitem {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px; /* Perspective for 3D effect */
+    cursor: pointer;
+    position: relative;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  
+  .leitem .lefront, 
+  .leitem .leback {
+    position: absolute;
     width: 100%;
     height: 100%;
-}
-.lecard1{
+    backface-visibility: hidden; /* Hide the back when the front is visible */
+    transition: transform 0.8s ease; /* Smooth flip effect */
+    border-radius: 10px;
+  }
+  
+  .lefront img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .leback {
+    background-color: #000;
     color: white;
     display: flex;
     flex-direction: column;
-    padding: 1% 2%;
-    gap: 8px;
-    border-radius: 10px;
-    background-color: #000000;
-}
-.lecard1 >h1{
-    text-align: center;
-}
-.letext{
-    background-color: white;
-    border-radius: 6px;
-    flex: 1;
-    padding: 1%;
-}
-.ledown{
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-}
-.letext >p{
+    padding: 20px;
+    transform: rotateY(180deg); /* Flip to the back */
+  }
+  
+  .leback h1 {
+    text-align: center;
+  }
+  
+  .letext {
+    background-color: white;
     color: black;
-}
+    border-radius: 6px;
+    padding: 10px;
+  }
+  
+  .ledown {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  /* Flip effect */
+  .flipped .lefront {
+    transform: rotateY(180deg); /* Flip the front side */
+  }
+  
+  .flipped .leback {
+    transform: rotateY(0deg); /* Show the back side */
+  }
+  
+  /* Hover effect for a subtle transformation */
+  .leitem:hover {
+    transform: scale(1.05); /* Slightly enlarges the card on hover */
+  }
+  
+  .leitem {
+    transition: transform 0.3s ease; /* Smooth scaling transition */
+  }
+  

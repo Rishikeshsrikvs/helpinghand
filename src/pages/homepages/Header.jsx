@@ -45,9 +45,9 @@ export const Header = () => {
         <ul className='navul'>
           <li><NavLink to="/" className={({ isActive }) => (isActive ? 'active-link' : '')}>Home</NavLink></li>
           <li><NavLink to="About" className={({ isActive }) => (isActive ? 'active-link' : '')}>About Us</NavLink></li>
-          <li><NavLink to="Menu" className={({ isActive }) => (isActive ? 'active-link' : '')}>Menu</NavLink></li>
-          <li><NavLink to="Services" className={({ isActive }) => (isActive ? 'active-link' : '')}>Services</NavLink></li>
-          <li><NavLink to="Gallery" className={({ isActive }) => (isActive ? 'active-link' : '')}>Galllery</NavLink></li>
+          <li><NavLink to="ourprogram" className={({ isActive }) => (isActive ? 'active-link' : '')}>Our Programs</NavLink></li>
+          <li><NavLink to="media" className={({ isActive }) => (isActive ? 'active-link' : '')}>Media</NavLink></li>
+          <li><NavLink to="getinvolved" className={({ isActive }) => (isActive ? 'active-link' : '')}>Get Involved</NavLink></li>
          
         </ul>
         <div className='navcar'>

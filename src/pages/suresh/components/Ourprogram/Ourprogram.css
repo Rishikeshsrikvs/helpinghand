@@ -1,0 +1,238 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.ourprogram{
+    width: 100%;
+    height: 100vh;
+}
+.program-container{
+    width: 95%;
+    margin: 0 auto;
+
+}
+.program-content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:4rem auto;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.program-left h1{
+    font-size: 32px;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 51px;
+}
+.program-left p{
+    font-size: 15px;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+    line-height: 30px;
+    font-weight: 400;
+}
+.program-left .join-btn{
+   padding: 14px 25px;
+   border: none;
+   color: #fff;
+   background: #0699ff;
+   font-size: 20px;
+   font-weight: 600;
+}
+.program-left h1 span{
+    color: #008b4a;
+}
+.program-right{
+    width: 748px;
+    height: 710px;
+}
+.program-left{
+    width: 600px;
+}
+.program-right img{
+    width: 100%;
+}
+
+.ourprogram-sec{
+    margin-top: 10rem ;
+}
+.our-heading{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 5rem;
+}
+.button-container{
+    background: #0699ff;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 10rem;
+}
+.container-btns{
+    background: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+    transition: all .3s ease;
+}
+.container-btns:hover{
+    background: none;
+    border-left: 3px solid #fff ;
+    border-radius: 0px;
+    border-right: 3px solid #fff;
+    font-size: 22px;
+}
+.container-btns:active{
+    transform: scale(1.1);
+}
+.passionate{
+    width: 100%;
+    margin-top: 8rem;
+}
+.passionate .pass-con{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.passionate .pass-con h1{
+    margin-top: 13rem;
+   margin-bottom: 80px;
+   font-size: 32px;
+   font-weight: 700;
+   text-transform: capitalize;
+}
+.passionate .pass-con p{
+   margin-bottom: 60px;
+   font-size: 20px;
+   font-weight: 500;
+   line-height: 35px;
+   text-transform: capitalize;
+}
+.passionate .pass-con .pass-btn{
+    margin: 3rem auto;
+
+   font-size: 20px;
+   font-weight: 700;
+   text-transform: uppercase;
+   padding:14px 30px;
+   color: #fff;
+   border: none;
+   outline: none;
+   background: #0699ff;
+   border-radius: 5px;
+}
+
+.act-donate{
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+}
+.act-donate:hover{
+    background: #fff;
+   color: black;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .ourprogram{
+        width: 90%;
+    }
+    .program-container{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .program-content{
+        width: 90%;
+       
+        
+        margin:2rem auto;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+  
+  
+    program-right img{
+        width: 100%;
+    }
+    .program-right{
+    width: 320px;
+    height: 400px;
+}
+.program-left{
+    text-align: center;
+    width: 320px;
+}
+.program-left h1{
+    font-size: 14px;
+}
+.program-left p{
+    font-size: 10px;
+    line-height: 23px;
+    text-align: center;
+}
+.program-right img{
+    width: 100%;
+}
+.program-left .join-btn{
+    padding: 14px 18px;
+   
+    font-size: 9px;
+    font-weight: 700;
+ }
+ .ourprogram-content{
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 7rem ;
+    
+}
+.ourprogram-content h1{
+    width: 100%;
+    text-align: center;
+    margin-top: 6rem;
+    margin-bottom: 4rem ;
+    font-size: 20px;
+    
+}
+.our-container{
+    width: 95%;
+    border-radius: 0px;
+}
+
+.our-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    margin: 0 auto;
+    background: #0699ff;
+}
+.our-container .ourscon h2{
+   border-left: 2px solid #fff;
+   border-right: 2px solid #fff;
+   width: 110px;
+   padding: 8px 8px;
+   font-size: 7px;
+   color: #fff;
+   text-transform: uppercase;
+  font-style: italic;
+
+}
+.our-container .ourscon p{
+  margin-right: 10px;
+  font-size: 6px;
+ 
+}
+}

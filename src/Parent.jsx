@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Admin from './Admin';
+import Admin from './pages/adminpages/admin';
 import Home from './pages/homepages/Home';
 
 const Parent = () => {
@@ -8,7 +9,7 @@ const Parent = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/*" element={<Home />} />
-        {/* <Route path="/admin/SHRA/*" element={<Admin />} /> */}
+        <Route path="/admin/SHRA/*" element={<Admin />} /> 
       </Routes>
     </BrowserRouter>
   );
