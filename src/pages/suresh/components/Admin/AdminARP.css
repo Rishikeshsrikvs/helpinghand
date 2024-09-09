@@ -1,0 +1,192 @@
+.adminarp{
+    width: 100%;
+}
+
+.arp-container {
+    width: 100%;
+    margin: 50px auto;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #000;
+  }
+  .arp-btns{
+    margin: 0 auto;
+  }
+  
+  .arp-form-container {
+    width: 30%;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    color: #000000;
+  }
+  .arp-form-year{
+    width: 172px;
+   margin: 0 auto;
+  }
+  .arp-form-container label {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .arp-form-container input {
+    width: 162px;
+    padding: 5px;
+    border-radius: 5px;
+
+    border: 1px solid #ccc;
+  }
+  
+  .arp-upload-container {
+    width: 285px;
+    height: 222px;
+    margin: 20px 0;
+    background: #000;
+  }
+  
+  .arp-upload-btn, .arp-drive-btn {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .arp-upload-btn:hover, .arp-drive-btn:hover {
+    background-color: #e0e0e0;
+  }
+  
+  p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .arp-up-submit-btn {
+    width: 100px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .arp-submit-btn:hover {
+    background-color: #333;
+  }
+  
+ .arp-td-btn{
+    background: none;
+    width: 8%;
+ }
+ .arp-td-delete{
+    padding: 10px 30px;
+ }
+
+ .arp-thead-lr{
+    border-top-left-radius: 8px;
+ }
+ .arp-thead-rr{
+    border-top-right-radius: 8px;
+ }
+.arp-tr, .arp-td{
+    text-align: center;
+}
+
+
+/* uploadbtns */
+.arp-btns {
+    width: 285px;
+    height: 242px;
+    background: #000;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 9px;
+    margin-top: 30px;
+  }
+  
+  .arp-btns p {
+    color: #fff;
+    padding-bottom: 5px;
+    margin: 0 4px;
+  }
+   span{
+      width: 90px;
+      height: 1px;
+    background-color: #fff;
+  }
+  .arp-or{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      line-height: 30px;
+  }
+  .arp-upload-btn{
+      width: 225px;
+      margin-bottom: 15px;
+      height: 46px;
+      font-size: 16px;
+      color: #135CFF;
+      background: #FFFFFF;
+      border: none;
+      outline: none;
+      font-weight: 600;
+      transition: all .3s ease;
+  }
+  .arp-upload-btn:hover{
+      transform: scale(1.02);
+      background: #ddd8d8;
+      color: #000;
+  }
+  .arp-upload-btn:active{
+      transform: scale(.98);
+      background: #ddd8d8;
+      color: #000;
+  }
+  .arp-drive-btn{
+      width: 225px;
+      height: 46px;
+      font-size: 16px;
+      color: #135CFF;
+      background: #FFFFFF;
+      border: none;
+      outline: none;
+      font-weight: 600;
+  }
+  .arp-drive-btn:hover{
+      transform: scale(1.02);
+      background: #ddd8d8;
+      color: #000;
+  }
+  .arp-drive-btn:active{
+      transform: scale(.98);
+      background: #ddd8d8;
+      color: #000;
+  }
+  .arp-sub-btn{
+      
+      color: #ffffff;
+      background:none;
+      border: none;
+      outline: none;
+      font-weight: 600;
+  }
+  .arp-sub-btn:hover{
+      transform: scale(1.02);
+      background: #3a3a3a;
+      color: #ffffff;
+  }
+  .arp-sub-btn:active{
+      transform: scale(.98);
+      color: #808080;
+  }

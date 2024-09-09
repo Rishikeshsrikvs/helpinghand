@@ -1,0 +1,80 @@
+.main-adupcomingevent{
+  width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.table-container {
+    width:100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #0a2e47; 
+    color: white;
+    
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #fff;
+  }
+  
+  table th {
+    text-transform: uppercase;
+  }
+  .eventname{
+    width: 300px;
+    border-left:none ;
+    text-align: center;
+  }
+  .date{
+    width: 140px;
+    text-align: center;
+  }
+  .location{
+    width: 180px;
+    text-align: center;
+  }
+  .DESC{
+    text-align: center;
+  }
+  
+  table td {
+    background-color: #0a2e47;
+  }
+  
+  .table-button {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 7px;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 6px 18px;
+    transition: all .5s ease;
+    margin-bottom: 18px;
+  }
+  
+  .table-button:hover {
+    transition: background .5s ease;
+    background: #ff0000;
+    transform: scale(1.05);
+  }
+  .table-button:active {
+    transform: scale(.95);
+  }
+  

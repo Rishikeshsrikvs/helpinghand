@@ -1,0 +1,68 @@
+
+.notification{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+.content-notification{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.notifications{
+    background: #000;
+    width: 199px;
+    height: 103px;
+    border-radius: 4px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Plus Jakarta Sans";
+    position: relative;
+}
+.notifications h2{
+    font-size: 40px;
+    font-weight: 700;
+}
+.notifications p{
+    font-size: 20px;
+    font-weight: 700;
+}
+.noti-dot{
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    background: #FF0707;
+    border-radius: 50%;
+    top: -10px;
+    right: -10px;
+}
+
+.qr-gen{
+    padding: 14px 80px;
+    font-size: 24px;
+    font-family: "Plus Jakarta Sans";
+    font-weight: 700;
+    background: #001F34;
+    border-radius: 4px;
+    transition: all .4s ease;
+}
+.qr-gen:hover{
+    transform: scale(1.03);
+    background: #fff;
+    color: #000;
+    border: 1px solid #888;
+}
+.qr-gen:active{
+    transform: scale(1);
+}

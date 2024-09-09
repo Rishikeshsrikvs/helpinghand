@@ -280,11 +280,11 @@ text-align: left;
     font-size: 48px;
     font-style: italic;
     font-weight: 800;
-    
+    color: black;
     text-align: left;
 
 }
-.land8main>span{
+.land8main .l8line{
     width:1px;
     height: 300px;
     background: white;
