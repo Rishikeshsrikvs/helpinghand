@@ -1,6 +1,4 @@
 import React from "react";
-import { useState,useEffect } from "react";
-import api from "../../../../api/api";
 import graleft from "../About/AboutImages/Vector.png";
 import graright from "../About/AboutImages/Ellipse.png";
 import gall1 from "../About/AboutImages/image1.png";
@@ -20,49 +18,6 @@ import backr from "../About/AboutImages/backornament.png";
 import "./AboutUs.css";
 
 const AboutUs = () => {
-  const [years, setYears] = useState([]); // State for storing years
-  const [error, setError] = useState(null); // State for handling errors
-  const [selectedYearId, setSelectedYearId] = useState(""); // State for selected year ID
-
-  // Fetch years from the API
-  useEffect(() => {
-    const fetchYears = async () => {
-      try {
-        const response = await api.get("/reportYears"); // Fetch year data from API
-        if (response.data && Array.isArray(response.data)) {
-          setYears(response.data); // Set years if data format is correct
-        } else {
-          console.error("Unexpected response format:", response);
-          setError("Unexpected response format");
-        }
-      } catch (error) {
-        console.error("Error fetching years:", error);
-        setError("Error fetching years");
-      }
-    };
-
-    fetchYears();
-  }, []);
-
-  // Handle dropdown change
-  const handleYearChange = (event) => {
-    setSelectedYearId(event.target.value); // Set selected year ID
-  };
-
-  // Handle form submission
-  const handleSubmit = () => {
-    if (selectedYearId) {
-      try {
-        // Open the report in a new tab
-        window.open(`${api.defaults.baseURL}/report/${selectedYearId}`, "_blank");
-      } catch (error) {
-        console.error("Error downloading the report:", error);
-        setError("Error downloading the report");
-      }
-    } else {
-      alert("Please select a year first.");
-    }
-  };
   return (
     <>
       <div className="aboutus">
@@ -225,23 +180,17 @@ const AboutUs = () => {
             <h3>ANNUAL REPORT</h3>
           </div>
           <div className="annual-btn">
-            <select className="year-dropdown"
-             value={selectedYearId || ""}
-             onChange={handleYearChange}
-             >
+            <select class="year-dropdown">
               <option value="" disabled selected>
                 <span className="line"></span>Year<span className="line"></span>
               </option>
-              {/* Render years dynamically */}
-              {years.map((year) => (
-                <option key={year._id} value={year._id}>
-                  {year.year} {/* Assuming the API returns objects with id and year */}
-                </option>
-              ))}
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2025">2026</option>
             </select>
-            <button className="submit-button"  onClick={handleSubmit}>Submit</button>
+            <button class="submit-button">Submit</button>
           </div>
-          {error && <p style={{ color: 'red' }}>{error}</p>}
         </div>
         <div className="about-annual-poster">
           <div className="about-annual">

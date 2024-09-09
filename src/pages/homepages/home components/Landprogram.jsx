@@ -9,13 +9,11 @@ import lp4 from './../../../assets/Land/landprogram/lp4.png';
 import lp5 from './../../../assets/Land/landprogram/lp5.png';
 
 // Add separate images for the right side display
-
 import edu from './../../../assets/Land/landprogram/edu.png';
 import flood from './../../../assets/Land/landprogram/flood.png';
 import food from './../../../assets/Land/landprogram/food.png';
 import med from './../../../assets/Land/landprogram/med.png';
 import medlast from './../../../assets/Land/landprogram/medlast.png';
-
 
 const programs = [
   {
@@ -56,8 +54,8 @@ const programs = [
 ];
 
 const Landprogram = () => {
-  const [selectedProgramId, setSelectedProgramId] = useState(null); // Track which program is selected
-  const [selectedImage, setSelectedImage] = useState(null); // Track the selected image
+  const [selectedProgramId, setSelectedProgramId] = useState(1); // Track which program is selected
+  const [selectedImage, setSelectedImage] = useState(programs[0].rightImage); // Set the initial image to the first program's image
 
   const handleProgramClick = (program) => {
     setSelectedProgramId(program.id === selectedProgramId ? null : program.id); // Toggle between showing/hiding the description

@@ -1,50 +1,60 @@
-import React from "react";
-import gall1 from "../Gallery/galleryimage/gall1.png"
-import gall2 from "../Gallery/galleryimage/gall2.png"
-import gall3 from "../Gallery/galleryimage/gall3.png"
-import gall4 from "../Gallery/galleryimage/gall4.png"
-import gall5 from "../Gallery/galleryimage/gall5.png"
-import gall6 from "../Gallery/galleryimage/gall6.png"
-import gall7 from "../Gallery/galleryimage/gall7.png"
-import gall8 from "../Gallery/galleryimage/gall8.png"
-import "./Gallery.css"
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Marquee from "react-fast-marquee";
+import "./Gallery.css";
+import { useNavigate } from "react-router-dom";
 
 const Gallery = () => {
+  const navigate= useNavigate();
+  const [images, setImages] = useState([]);
+  const apiBaseUrl = "https://helpinghands-8tdm.onrender.com"; // Your base URL
+
+  useEffect(() => {
+    // Fetch images from the API
+    const fetchImages = async () => {
+      try {
+        const response = await axios.get(`${apiBaseUrl}/galleryImageName`);
+        if (response.status === 200) {
+          setImages(response.data); // Set the fetched images
+        }
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      }
+    };
+
+    fetchImages();
+  }, []);
+
   return (
     <div className="gallery">
       <div className="gallery-container">
         <div className="hero-image"></div>
         <div className="gall-container">
-        <div className="gall-row ">
-          <div className="images">
-          <img src={gall1} alt="gallery" />
-          </div>
-          <div className="images">
-          <img src={gall2} alt="gallery" />
-        
-          </div>
-          <div className="images">
-     
-          <img src={gall3} alt="gallery" />
-          </div>
-          <div className="images">
-          <img src={gall4} alt="gallery" />
-      
-          </div>
-        </div>
-        <div className="gall-row">
-          <img src={gall5} alt="gallery" />
-          <img src={gall6} alt="gallery" />
-          <img src={gall7} alt="gallery" />
-          <img src={gall8} alt="gallery" />
-        </div>
+          <Marquee className="gall-row" speed={300}>
+            {images.map((image) => (
+              <img
+                key={image._id}
+                src={`${apiBaseUrl}/gallery/${image._id}`}
+                alt="gallery"
+              />
+            ))}
+          </Marquee>
+          <Marquee className="gall-row" speed={300} direction={"right"}>
+            {images.toReversed().map((image) => (
+              <img
+                key={image._id}
+                src={`${apiBaseUrl}/gallery/${image._id}`}
+                alt="gallery"
+              />
+            ))}
+          </Marquee>
         </div>
         <div className="gall-text">
           <h1>
             “ The purpose of life is not to be happy. It is to be useful, to be
             honorable, to be compassionate “
           </h1>
-          <button className="gall-btn">donate now</button>
+          <button className="gall-btn"  onClick={()=>(navigate('/donate'))}>donate now</button>
         </div>
       </div>
     </div>

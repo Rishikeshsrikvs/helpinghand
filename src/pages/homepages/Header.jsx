@@ -43,11 +43,11 @@ export const Header = () => {
       
       <div className={`navcontainer ${isMenuOpen ? 'active' : ''}`}>
         <ul className='navul'>
-          <li><NavLink to="/" className={({ isActive }) => (isActive ? 'active-link' : '')}>Home</NavLink></li>
+          {/* <li><NavLink to="/" className={({ isActive }) => (isActive ? 'active-link' : '')}>Home</NavLink></li> */}
           <li><NavLink to="About" className={({ isActive }) => (isActive ? 'active-link' : '')}>About Us</NavLink></li>
           <li><NavLink to="ourprogram" className={({ isActive }) => (isActive ? 'active-link' : '')}>Our Programs</NavLink></li>
           <li><NavLink to="media" className={({ isActive }) => (isActive ? 'active-link' : '')}>Media</NavLink></li>
-          <li><NavLink to="blooddonation" className={({ isActive }) => (isActive ? 'active-link' : '')}>Media</NavLink></li>
+          <li><NavLink to="blooddonate" className={({ isActive }) => (isActive ? 'active-link' : '')}>Blood Donation</NavLink></li>
           <li><NavLink to="getinvolved" className={({ isActive }) => (isActive ? 'active-link' : '')}>Get Involved</NavLink></li>
          
         </ul>

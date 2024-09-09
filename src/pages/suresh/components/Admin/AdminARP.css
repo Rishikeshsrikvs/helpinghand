@@ -62,7 +62,7 @@
     background-color: #e0e0e0;
   }
   
-  p {
+  .arpor{
     margin: 10px 0;
     font-size: 14px;
     color: #fff;
@@ -120,7 +120,7 @@
     padding-bottom: 5px;
     margin: 0 4px;
   }
-   span{
+   .arpline{
       width: 90px;
       height: 1px;
     background-color: #fff;

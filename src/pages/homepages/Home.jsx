@@ -10,6 +10,7 @@ import Ourprogrms from './../suresh/components/Ourprogram/Ourprogram.jsx';
 import Donate from './../suresh/components/Donate/Donate.jsx';
 import Donatenow from './../suresh/components/DonateNow/DonateNow.jsx';
 import Involve from './Involve.jsx';
+import Blooddonate from './Blooddonate.jsx';
 const Home = () => {
   return (
     <div>
@@ -25,7 +26,8 @@ const Home = () => {
             <Route path="/donate" element={<Donate />} />
             <Route path="/donatenow" element={<Donatenow />} />
             <Route path="/getinvolved" element={<Involve />} />
-            
+            <Route path="/blooddonate" element={<Blooddonate />} />
+
 
       </Routes>
       <Footer/>

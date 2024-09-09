@@ -1,12 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
-
+import api from '../../api/api';
 import { useNavigate } from 'react-router-dom';
 import './Adminlogin.css';
-import { useAuth } from './auth/AuthContext';
+import { useAuth } from './auth/AuthContext'; // Import the authentication context
 import logo from './../../assets/adminlogin/loginlogo.png';
-import back from './../../assets/adminlogin/loginback.png';
-
 
 const Adminlogin = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +15,7 @@ const Adminlogin = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const otpPopupRef = useRef(null);
   const navigate = useNavigate();
-  const { login, token } = useAuth();
+  const { login, token } = useAuth(); // Use the authentication context
 
   const handleChange = (e) => {
     setFormData({
@@ -29,15 +26,18 @@ const Adminlogin = () => {
 
   const handleLoginSubmit = async () => {
     try {
-      const response = await axios.post('/api/admin/login', {
+      const response = await api.post('/admin/login', {
         adminEmail: formData.username,
         adminPassword: formData.password,
       });
 
       if (response.status === 200) {
-        login(response.data.jwt);
-        setShowOtpPopup(true);
+        login(response.data.jwt); // Store the token in context
+        console.log("Logged in with token:", response.data.jwt);
+        setShowOtpPopup(true); // Show OTP popup after successful login
         setErrorMessage('');
+      } else {
+        setErrorMessage('Login failed. Please check your credentials.');
       }
     } catch (error) {
       setErrorMessage('Login failed. Please check your credentials.');
@@ -82,13 +82,15 @@ const Adminlogin = () => {
     const otpValue = otp.join('');
 
     try {
-      const response = await axios.get(`/api/admin/verify/${otpValue}`, {
-        headers: { Authorization: `Bearer ${token}` },
+      const response = await api.get(`/admin/verify/${otpValue}`, {
+        headers: { authorization: token },
       });
 
       if (response.status === 200) {
-        login(response.data.jwt);
+        login(response.data.jwt); // Update the token after OTP verification
+        console.log("OTP verified, new token set:", response.data.jwt);
         navigate('/admin/SHRA/dashboard');
+        setErrorMessage('');
       } else {
         setErrorMessage('OTP verification failed. Please try again.');
       }

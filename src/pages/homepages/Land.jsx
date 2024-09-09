@@ -1,6 +1,7 @@
 import React from 'react'
 import './Land.css';
 
+
 import l61 from './../../assets/Land/l61.png';
 import l62 from './../../assets/Land/l62.png';
 import l63 from './../../assets/Land/l63.png';
@@ -17,7 +18,7 @@ import l41 from './../../assets/Land/Group 1000010845.png';
 import l42 from './../../assets/Land/Group 1000010844.png';
 import l43 from './../../assets/Land/Group 1000010843.png';
 
-
+import { useNavigate } from 'react-router-dom';
 
 import l10dn1 from './../../assets/Land/l10dn1.png';
 import l10dn2 from './../../assets/Land/l10dn2.png';
@@ -26,6 +27,8 @@ import l10up2 from './../../assets/Land/l10up2.png';
 import Landprogram from './home components/Landprogram';
 import Landevent from './home components/Landevent';
 const Land = () => {
+
+    const navigate=useNavigate();
   return (
     <div className='landparent'>
       
@@ -77,7 +80,7 @@ const Land = () => {
             <div className="l6right">
                 <h1>We are Driven by <br/><span> Volunteering</span> & Transformation</h1>
                 <p>Our steadfast optimism serves as fuel for our quest for significant change. By leveraging the power of volunteerism, we are constructing a society in which each person can use their voice and personal story to influence the dialogue and improve everyone's future.</p>
-                <div className="l6rightbtn"><button>JOIN THE MOVEMENT</button></div>
+                <div className="l6rightbtn"><button  onClick={()=>(navigate('/donate'))}>JOIN THE MOVEMENT</button></div>
             </div>
         </div>
     </div>
@@ -143,7 +146,7 @@ const Land = () => {
         <div className="l10left">
             <h1>JOIN US</h1>
             <p>Together, we can make a difference. Join us in helping those in need—every small action counts.</p>
-            <div className="l10leftbtn"><button>Let's Help</button></div>
+            <div className="l10leftbtn"><button onClick={()=>(navigate('/donate'))}>Let's Help</button></div>
         </div>
         <div className="l10right">
             <div className="l10up">

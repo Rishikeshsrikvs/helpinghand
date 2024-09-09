@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 import phone from "../Contact/contactimage/Phone.png";
 import address from "../Contact/contactimage/Address.png";
@@ -8,7 +8,95 @@ import img2 from "../Contact/contactimage/image2.png";
 import img3 from "../Contact/contactimage/image3.png";
 import img4 from "../Contact/contactimage/image4.png";
 import img5 from "../Contact/contactimage/image5.png";
+import api from "../../../../api/api";
+
 const Contact = () => {
+  // State to handle form data
+  const [formData, setFormData] = useState({
+    contactName: "",
+    contact: "",
+    email: "",
+    message: ""
+  });
+
+  // State to handle form validation errors
+  const [errors, setErrors] = useState({});
+  // State to handle success message
+  const [successMessage, setSuccessMessage] = useState("");
+
+  // Function to validate form data
+  const validate = () => {
+    let formErrors = {};
+
+    // Validate Name
+    if (!formData.contactName.trim()) {
+      formErrors.contactName = "Name is required";
+    }
+
+    // Validate Phone Number
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!formData.contact) {
+      formErrors.contact = "Phone number is required";
+    } else if (!phoneRegex.test(formData.contact)) {
+      formErrors.contact = "Phone number must be 10 digits";
+    }
+
+    // Validate Email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      formErrors.email = "Email is required";
+    } else if (!emailRegex.test(formData.email)) {
+      formErrors.email = "Invalid email address";
+    }
+
+    return formErrors;
+  };
+
+  // Handle form input changes
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Clear previous success message and validation errors
+    setSuccessMessage("");
+    setErrors({});
+
+    // Validate the form
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    // If validation passes, make the POST request
+    try {
+      const response = await api.post("/contact", formData, {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
+      });
+
+      // If the request is successful, show the success message
+      setSuccessMessage("Form submitted successfully!");
+
+      // Reset the form
+      setFormData({
+        contactName: "",
+        contact: "",
+        email: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error("There was an error submitting the form:", error);
+      alert("Form submission failed.");
+    }
+  };
+
   return (
     <>
       <div className="contactUs">
@@ -47,70 +135,71 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div class="form-container">
-            <form>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="firstname">
-                    Name <span class="required">*</span>
+          <div className="form-container">
+            <form onSubmit={handleSubmit}>
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="contactName">
+                    Name <span className="required">*</span>
                   </label>
                   <input
                     type="text"
-                    id="firstname"
-                  
+                    id="contactName"
+                    value={formData.contactName}
+                    onChange={handleChange}
                     required
                   />
+                  {errors.contactName && <p className="error">{errors.contactName}</p>}
                   <p>First Name</p>
                 </div>
-                <div class="form-group">
-                  <label for="lastname">Last Name</label>
+                <div className="form-group">
+                  <label htmlFor="contact">
+                    Phone Number <span className="required">*</span>
+                  </label>
                   <input
-                    type="text"
-                    id="lastname"
+                    type="tel"
+                    id="contact"
+                    value={formData.contact}
+                    onChange={handleChange}
                     required
                   />
-                  <p>Last Name</p>
+                  {errors.contact && <p className="error">{errors.contact}</p>}
+                  <p>Enter Your Number</p>
                 </div>
               </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="email">
-                    Email <span class="required">*</span>
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="email">
+                    Email <span className="required">*</span>
                   </label>
                   <input
                     type="email"
                     id="email"
-                    placeholder=""
+                    value={formData.email}
+                    onChange={handleChange}
                     required
                   />
+                  {errors.email && <p className="error">{errors.email}</p>}
                   <p>Example@Example.Com</p>
                 </div>
-                <div class="form-group">
-                  <label for="phone">
-                    Phone Number <span class="required">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    required
-                  />
-                  <p>Enter Your Number</p>
-                </div>
               </div>
-              <div class="form-row">
-                <div class="form-group full-width">
-                  <label for="message">Message</label>
+              <div className="form-row">
+                <div className="form-group full-width">
+                  <label htmlFor="message">Message</label>
                   <textarea
                     id="message"
                     rows="12"
-                    
+                    value={formData.message}
+                    onChange={handleChange}
                   ></textarea>
                 </div>
               </div>
-              <div class="submit-row">
+              <div className="submit-row">
                 <button type="submit">Submit</button>
               </div>
             </form>
+            {/* Display Success Message */}
+            {successMessage && <p className="success-message">{successMessage}</p>}
           </div>
           <div className="center-text">
             <h3>
@@ -142,7 +231,6 @@ const Contact = () => {
                       </p>
                     </li>
                     <li>
-                    
                       <p>helpinghandsavadi@gmail.com</p>
                     </li>
                     <li>

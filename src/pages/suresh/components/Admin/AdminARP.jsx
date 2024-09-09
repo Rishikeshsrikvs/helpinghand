@@ -25,9 +25,9 @@ const AdminARP = () => {
           <div className="arp-btns">
             <button className="arp-upload-btn">UPLOAD PDF</button>
             <div className="arp-or">
-              <span></span>
-              <p>or</p>
-              <span></span>
+              <span className="arpline"></span>
+              <p className="arpor">or</p>
+              <span className="arpline"></span>
             </div>
             <button className="arp-drive-btn">DRIVE</button>
             <button className="arp-sub-btn">Submit</button>

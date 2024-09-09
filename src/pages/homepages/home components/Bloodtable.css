@@ -1,0 +1,9 @@
+.bloodtablemain{
+    width: 80%;
+    margin: 5vh auto;
+}
+.bloodtable{
+    border: none;
+    border-collapse: collapse;
+
+}
