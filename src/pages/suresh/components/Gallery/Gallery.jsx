@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../../../../api/api";
 import Marquee from "react-fast-marquee";
 import "./Gallery.css";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +13,7 @@ const Gallery = () => {
     // Fetch images from the API
     const fetchImages = async () => {
       try {
-        const response = await axios.get(`${apiBaseUrl}/galleryImageName`);
+        const response = await api.get(`/galleryImageName`);
         if (response.status === 200) {
           setImages(response.data); // Set the fetched images
         }

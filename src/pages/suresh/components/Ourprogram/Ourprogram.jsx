@@ -1,6 +1,7 @@
 import "./Ourprogram.css";
 import proimg1 from "../Ourprogram/programimage/proimg1.png";
 import React, { useState } from "react";
+import { useEffect } from 'react';
 import edu1 from "../Ourprogram/programimage/eduimage1.png";
 import edu2 from "../Ourprogram/programimage/eduimage2.png";
 import edu3 from "../Ourprogram/programimage/eduimage3.png";
@@ -17,10 +18,15 @@ import "./Educationprogram.css";
 import "./Healthcare.css";
 import "./Flood.css";
 import "./Feed.css";
+import { useNavigate } from 'react-router-dom';
 
 const Ourprogram = () => {
   const [activeSection, setActiveSection] = useState("education");
-
+  const navigate=useNavigate();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const renderSection = () => {
     switch (activeSection) {
       case "education":
@@ -62,7 +68,7 @@ const Ourprogram = () => {
                     Act today,
                     <br /> change tomorrow
                   </h3>
-                  <button className="edu-right-btn">DONATE</button>
+                  <button className="edu-right-btn" onClick={()=>(navigate('/donate'))}>DONATE</button>
                 </div>
               </div>
             </div>
@@ -107,7 +113,7 @@ const Ourprogram = () => {
                     Act today,
                     <br /> change tomorrow
                   </h3>
-                  <button className="hc-right-btn">DONATE</button>
+                  <button className="hc-right-btn" onClick={()=>(navigate('/donate'))}>DONATE</button>
                 </div>
               </div>
             </div>
@@ -152,7 +158,7 @@ const Ourprogram = () => {
                     Act today,
                     <br /> change tomorrow
                   </h3>
-                  <button className="flood-right-btn">DONATE</button>
+                  <button className="flood-right-btn" onClick={()=>(navigate('/donate'))}>DONATE</button>
                 </div>
               </div>
             </div>
@@ -195,7 +201,7 @@ const Ourprogram = () => {
                     Act today,
                     <br /> change tomorrow
                   </h3>
-                  <button className="feed-right-btn">DONATE</button>
+                  <button className="feed-right-btn" onClick={()=>(navigate('/donate'))}>DONATE</button>
                 </div>
               </div>
             </div>
@@ -225,7 +231,7 @@ const Ourprogram = () => {
               committed people who are bringing about positive change throughout
               India.
             </p>
-            <button className="join-btn">JOIN THE MOVEMENT</button>
+            <button className="join-btn" onClick={()=>(navigate('/getinvolved'))}>JOIN THE MOVEMENT</button>
           </div>
           <div className="program-right">
             <img src={proimg1} alt="" />
@@ -262,7 +268,7 @@ const Ourprogram = () => {
               lives. Your time, skills, and enthusiasm can help us reach more
               people and make a bigger impact.
             </p>
-            <button className="pass-btn">volunteer now</button>
+            <button className="pass-btn" onClick={()=>(navigate('/getinvolved'))}>volunteer now</button>
           </div>
         </div>
       </div>

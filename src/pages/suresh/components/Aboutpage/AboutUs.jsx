@@ -18,8 +18,14 @@ import gall10 from "../About/AboutImages/image10.png";
 import backl from "../About/AboutImages/backornam.png";
 import backr from "../About/AboutImages/backornament.png";
 import "./AboutUs.css";
+import { useNavigate } from 'react-router-dom';
 
 const AboutUs = () => {
+  const navigate=useNavigate();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [years, setYears] = useState([]); // State for storing years
   const [error, setError] = useState(null); // State for handling errors
   const [selectedYearId, setSelectedYearId] = useState(""); // State for selected year ID
@@ -187,7 +193,7 @@ const AboutUs = () => {
               add a deeper purpose to your celebrations. Spread happiness by
               helping others.
             </p>
-            <button className="abs-dn-button">Donate now</button>
+            <button className="abs-dn-button" onClick={()=>(navigate('/donate'))}>Donate now</button>
           </div>
         </div>
         <div className="about-volunteers">
@@ -218,7 +224,7 @@ const AboutUs = () => {
             <img src={backr} alt="" />
           </div>
           <h1>Make Your Weekends More Meaningful</h1>
-          <button className="vall-now-btns">volunteer now</button>
+          <button className="vall-now-btns" onClick={()=>(navigate('/getinvolved'))}>volunteer now</button>
         </div>
         <div className="about-annual-report">
           <div className="annual-report-tittle">

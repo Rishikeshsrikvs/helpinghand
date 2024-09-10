@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from 'react';
 import "./Contact.css";
 import phone from "../Contact/contactimage/Phone.png";
 import address from "../Contact/contactimage/Address.png";
@@ -18,7 +19,10 @@ const Contact = () => {
     email: "",
     message: ""
   });
-
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   // State to handle form validation errors
   const [errors, setErrors] = useState({});
   // State to handle success message

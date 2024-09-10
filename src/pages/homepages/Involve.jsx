@@ -8,8 +8,13 @@ import hr3 from './../../assets/involve/image (3).png';
 import hr4 from './../../assets/involve/image (4).png';
 import hr5 from './../../assets/involve/image (5).png';
 import hr6 from './../../assets/involve/image.png';
-
+import { useEffect } from 'react';
 const Involve = () => {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',

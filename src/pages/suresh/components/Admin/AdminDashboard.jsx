@@ -12,6 +12,7 @@ import Adnotification from "./Adnotification";
 import Adgallery from "./Adgallery";
 import Adupcomingevents from "./Adupcomingevents";
 // import Adform from "./Adminform";
+import Admincreateevents from './Admincreateevents.jsx';
 import Admincontact from "./Admincontact";
 import Adminvol from "./Adminvol";
 import Admindonner from "./Admindonner";
@@ -73,6 +74,7 @@ const AdminDashboard = () => {
                       <Route path="/dashboard" element={<Adnotification />} />
                       <Route path="/gallery" element={<Adgallery/>} />
                       <Route path="/events" element={<Adupcomingevents/>} />
+                      <Route path="/createevent" element={<Admincreateevents/>} />
                       <Route path="/contact" element={<Admincontact/>} />
                       <Route path="/volunteer" element={<Adminvol/>} />
 

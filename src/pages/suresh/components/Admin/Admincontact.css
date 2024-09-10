@@ -1,10 +1,10 @@
 .Admincontact{
     width: 90%;
-    height: 90%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20% auto;
+    margin: 4% auto;
 }
 .admincon-container{
     
@@ -18,14 +18,21 @@
 .admin-content{
     display: flex;
     align-items: center;
+    flex-direction: row;
     justify-content: space-between;
     gap: 50px;
-    flex-wrap: wrap;
+   
+    padding: 4%;
+   
+    margin:2vh auto;
+    width: auto;
+    
+   
 }
 .adcon-check{
-    margin: 5rem auto;
+    margin: 1% auto;
     width: 327px;
-    height: 297px;
+    padding: 1%;
     background: #001F34;
     border-radius: 11px;
     position: relative;
@@ -69,7 +76,7 @@
     margin-top: 10px;
     font-size: 10px;
     width: 290px;
-    height: 105px;
+    min-height: 55px;
     background: #fff;
     color: #000;
     font-weight: 400;
@@ -143,7 +150,7 @@
     background: #001F34;
     border-radius: 11px;
     position: relative;
-    margin: 5rem auto;
+    margin: 3vh auto;
 }
 
 .adcon-completed-container{
@@ -182,7 +189,7 @@
     margin-top: 10px;
     font-size: 10px;
     width: 267px;
-    height: 105px;
+    min-height: 65px;
     background: #fff;
     color: #000;
     font-weight: 400;

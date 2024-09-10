@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import api from '../../../../api/api'; // Make sure axios is imported
 import './Adgallery.css';
 import { useAuth } from '../../../adminpages/auth/AuthContext';// Import useAuth for authentication
@@ -8,7 +9,10 @@ const Adgallery = () => {
   const [uploadSuccess, setUploadSuccess] = useState('');
   const [uploadError, setUploadError] = useState('');
   const { token } = useAuth(); // Get the token from the auth context
-
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]); // Store the selected file in state
   };

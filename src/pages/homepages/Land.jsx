@@ -1,6 +1,7 @@
 import React from 'react'
 import './Land.css';
 
+import { useEffect } from 'react';
 
 import l61 from './../../assets/Land/l61.png';
 import l62 from './../../assets/Land/l62.png';
@@ -27,7 +28,10 @@ import l10up2 from './../../assets/Land/l10up2.png';
 import Landprogram from './home components/Landprogram';
 import Landevent from './home components/Landevent';
 const Land = () => {
-
+    
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
     const navigate=useNavigate();
   return (
     <div className='landparent'>

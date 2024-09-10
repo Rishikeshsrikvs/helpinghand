@@ -1,4 +1,5 @@
 import React from 'react'
+import './Home.css';
 import Footer from './Footer'
 import { Header } from './Header'
 import { Routes, Route } from 'react-router-dom';
@@ -16,20 +17,20 @@ const Home = () => {
     <div>
       <Header/>
       {/* <Land/> */}
-      <Routes>
-      
-            <Route path="/" element={<Land />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/media" element={<Gallery />} />
-            <Route path="/connect" element={<Contact/>} />
-            <Route path="/ourprogram" element={<Ourprogrms />} />
-            <Route path="/donate" element={<Donate />} />
-            <Route path="/donatenow" element={<Donatenow />} />
-            <Route path="/getinvolved" element={<Involve />} />
-            <Route path="/blooddonate" element={<Blooddonate />} />
-
-
-      </Routes>
+      <div className="homemain">
+        <Routes>
+        
+              <Route path="/" element={<Land />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/media" element={<Gallery />} />
+              <Route path="/connect" element={<Contact/>} />
+              <Route path="/ourprogram" element={<Ourprogrms />} />
+              <Route path="/donate" element={<Donate />} />
+              <Route path="/donatenow" element={<Donatenow />} />
+              <Route path="/getinvolved" element={<Involve />} />
+              <Route path="/blooddonate" element={<Blooddonate />} />
+        </Routes>
+      </div>
       <Footer/>
     </div>
   )

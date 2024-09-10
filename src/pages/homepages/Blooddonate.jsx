@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import './Blooddonate.css';
 import Requestform from './home components/Requestform.jsx';
 import Doner from './Doner.jsx';
@@ -9,6 +10,10 @@ import bl2 from './../../assets/blood/bl2.png';
 import bl3 from './../../assets/blood/bl3.png';
 
 const Blooddonate = () => {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [selectedBloodGroup, setSelectedBloodGroup] = useState('');
 
   const handleBloodGroupSubmit = (bloodGroup) => {

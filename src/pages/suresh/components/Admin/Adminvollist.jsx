@@ -1,7 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import "./Adminvollist.css"
+import { useAuth } from '../../../adminpages/auth/AuthContext';
+import api from '../../../../api/api';
 
 const Adminvollist = () => {
+  const { token } = useAuth();
+  const [volunteers,setVolunteers] = useState([]);
+
+  const fetchvolunteers = () => {
+    api.get('admin/volunteers',{
+      headers: {
+        authorization: token
+      }
+    })
+    .then(response => {
+      console.log(response.data);
+      
+      setVolunteers(response.data);
+    })
+    .catch(error => {
+      console.error('There was an error fetching the volunteers!', error);
+    });
+  };
+  useEffect(() => {
+    // Fetch events from the API when the component mounts
+    fetchvolunteers();
+  }, [token]);
   return (
     <div className="vl-table-container">
       <h2 className="vl-table-title">VOLUNTEERS LIST</h2>
@@ -16,13 +40,16 @@ const Adminvollist = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>sss</td>
-            <td>ccc</td>
-            <td>www</td>
-            <td>ggg</td>
-            <td>999999</td>
-          </tr>
+          {volunteers.map(volunteer => (
+              <tr>
+              <td>{volunteer.volunteerName}</td>
+              <td>{volunteer.volunteerLocation}</td>
+              <td>{volunteer.volunteerArea}</td>
+              <td>{volunteer.volunteerEmail}</td>
+              <td>{volunteer.volunteerContact}</td>
+            </tr>
+          ))}
+          
         </tbody>
       </table>
     </div>

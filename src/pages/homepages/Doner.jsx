@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import api from '../../api/api';
 import './Doner.css';
+import { useEffect } from 'react';
 
 const Doner = () => {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   // State to manage form input values
   const [formData, setFormData] = useState({
     name: '',

@@ -19,7 +19,7 @@ li {
     
     display: flex;
     align-items: center;
-    padding: 4px 4%;
+    padding: 10px 4%;
     /* height: 100px; */
     
     justify-content: space-between;
@@ -39,7 +39,8 @@ li {
 
 .navbar-logo img {
     /* width: px; */
-    height: 74px;
+    height: 154px;
+    width: 170px;
 }
 
 .navcontainer {
@@ -55,7 +56,7 @@ li {
 .navul {
     display: flex;
     gap: 1%;
-    width: 70%;
+    width: 75%;
     justify-content: space-between;
     transition: transform 0.3s ease;
    
@@ -64,8 +65,8 @@ li {
 .navul li a {
     
     font-family: Plus Jakarta Sans;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 600;
     line-height: 25.2px;
     text-align: left;
     color: #FFFFFF;
