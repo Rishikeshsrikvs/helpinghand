@@ -125,7 +125,7 @@
   margin-top: 2px;
 }
 
-label {
+.contactUs label {
   margin-bottom: 5px;
   font-size: 14px;
   font-weight: bold;
@@ -135,7 +135,7 @@ label {
   color: red;
 }
 
-input, textarea {
+.contactUs input,.contactUs textarea {
   padding: 8px;
   font-size: 14px;
   width: 100%;
@@ -143,7 +143,7 @@ input, textarea {
   border-radius: 5px;
 }
 
-textarea {
+.contactUs textarea {
   resize: none;
 }
 
@@ -158,7 +158,7 @@ textarea {
   position: relative;
 }
 
-button {
+.contactUs button {
   margin-top: 1rem;
   padding: 10px 40px;
   background-color: black;
@@ -174,7 +174,7 @@ button:active{
   transform: scale(1);
 }
 
-button:hover {
+.contactUs button:hover {
   background-color: #373535;
   color: white;
   transform: scale(1.1);

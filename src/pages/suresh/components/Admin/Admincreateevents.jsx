@@ -146,17 +146,17 @@ const Admincreateevents = () => {
 
                         <div className="admincreate-form-group admincreate-image-upload">
                             <label htmlFor="event-image"><span className='spanred'>*</span>IMAGE :</label>
-                            <div className="admincreate-uploadbox">
-                                <div className="center-elements">
+                            
+                                
                                     <input
                                         type="file"
                                         id="event-image"
                                         name="event-image"
                                         onChange={handleFileChange}
                                     />
-                                    {errors.eventImage && <p className="error">{errors.eventImage}</p>}
-                                </div>
-                            </div>
+                                    <p>{eventImage ? eventImage.name : 'No file selected'}</p>
+                               
+                            
                         </div>
                     </div>
 

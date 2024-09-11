@@ -8,7 +8,7 @@
     text-align: center;
   }
   
-  h1 {
+ .arp-container h1 {
     font-size: 24px;
     margin-bottom: 20px;
     font-weight: bold;
@@ -35,10 +35,12 @@
   }
   
   .arp-form-container input {
-    width: 162px;
-    padding: 5px;
+    width: 230px;
+    padding: 10px 10px;
     border-radius: 5px;
-
+    background-color: #000;
+    color: white;
+    font-size: 15px;
     border: 1px solid #ccc;
   }
   
@@ -56,6 +58,9 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+  }
+  .arp-btns input{
+    display: none;
   }
   
   .arp-upload-btn:hover, .arp-drive-btn:hover {
@@ -131,6 +136,11 @@
       align-items: center;
       line-height: 30px;
   }
+  .arp-sub-btn{
+    margin-top: 20px;
+    font-size: 17px;
+    background-color: gray;
+  }
   .arp-upload-btn{
       width: 225px;
       margin-bottom: 15px;
@@ -176,10 +186,12 @@
   .arp-sub-btn{
       
       color: #ffffff;
-      background:none;
+     
       border: none;
       outline: none;
       font-weight: 600;
+      padding:7px 30px ;
+      border-radius: 4px;
   }
   .arp-sub-btn:hover{
       transform: scale(1.02);
@@ -189,4 +201,7 @@
   .arp-sub-btn:active{
       transform: scale(.98);
       color: #808080;
+  }
+  .message{
+    margin-bottom: 10px;
   }

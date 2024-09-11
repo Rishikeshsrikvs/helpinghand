@@ -49,21 +49,29 @@
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 10px;
     align-items: center;
     padding: 20px;
+    overflow: hidden;
     transform: rotateY(180deg); /* Flip to the back */
   }
   
   .leback h1 {
     text-align: center;
+    color: white;
+    margin-bottom: 0;
   }
   
   .letext {
     background-color: white;
     color: black;
     border-radius: 6px;
+    overflow-y: hidden;
+    width: 98%;
     padding: 10px;
+    word-wrap: break-word;
+    
+
   }
   
   .ledown {

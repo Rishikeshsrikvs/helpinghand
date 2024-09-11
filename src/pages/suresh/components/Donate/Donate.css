@@ -52,6 +52,7 @@
 .donate-text .donate-btn{
     padding: 10px 60px ;   
     font-size: 24px; 
+    margin: 0 auto;
     text-transform: capitalize;
     background: #000000;
     color: #fff;

@@ -57,13 +57,16 @@ const Adgallery = () => {
             <label className="upload-btn" htmlFor="adegalimg">
               UPLOAD IMAGE
             </label>
+            <p>{selectedFile ? selectedFile.name : 'No file selected'}</p>
             <input
               type="file"
               id='adegalimg'
               onChange={handleFileChange}
               className="upload-input"
               accept="image/*"
+              style={{display:'none'}}
             />
+
             <div className="or">
               <span className="adgalline"> </span>
               <p>or</p>

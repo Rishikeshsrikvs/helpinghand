@@ -3,6 +3,8 @@
     width: 100vw;
     height: auto;
     display: flex;
+    overflow: hidden;
+    
   }
 
   .sidebar{
@@ -104,10 +106,18 @@
     font-family: "Plus Jakarta Sans";
 }
 .topbar-content{
-  margin-left: 200px;
+  margin-left: 139px;
   margin-top: 50px;
   padding: 20px;
+
   width: calc(100% - 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10vh;
+  min-height: 80vh;
+  
   
  
 }

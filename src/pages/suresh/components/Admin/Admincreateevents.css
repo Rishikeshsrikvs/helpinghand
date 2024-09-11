@@ -69,11 +69,20 @@
     justify-content: center;
     text-align: start;
     align-items: center;
+    background-color: #fff;
     
   }
-  .event-image{
-    width: 200px;
+ .admincreate-image-upload > label{
+    
+    padding:10px 30px ;
+    background-color: black;
+    color: white;
+
   }
+  #event-image{
+    display: none;
+  }
+  
   .spanred{
     background: none;
     color: red;
@@ -81,11 +90,7 @@
   }
   
   .admincreate-uploadbox{
-    background: #fff;
-    width: 285px;
-    height: 222px;
-    border-radius: 10px;
-    
+   
   }
   
   .center-elements{

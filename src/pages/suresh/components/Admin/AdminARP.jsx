@@ -83,8 +83,8 @@ const AdminARP = () => {
             <label htmlFor="year">YEAR:</label>
             <input 
               type="text" 
+              
               id="year" 
-              name="year" 
               value={yearInput}
               onChange={(e) => setYearInput(e.target.value)}
               required 
@@ -92,11 +92,13 @@ const AdminARP = () => {
           </div>
 
           <div className="arp-btns">
-            <label className="arp-upload-btn">UPLOAD PDF</label>
+            <label className="arp-upload-btn" htmlFor='arpimg'>UPLOAD PDF</label>
             <input 
               type="file" 
+              id='arpimg'
               onChange={(e) => setSelectedFile(e.target.files[0])}
             />
+             <p>{selectedFile ? selectedFile.name : 'No file selected'}</p>
             <div className="arp-or">
               <span className="arpline"></span>
               <p className="arpor">or</p>

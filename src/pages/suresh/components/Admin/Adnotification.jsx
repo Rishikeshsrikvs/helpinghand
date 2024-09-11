@@ -10,7 +10,11 @@ const Adnotification = () => {
   useEffect(() => {
     // Fetch contacts
     api.get("/admin/unvisitedContacts")
-      .then((response) => setContacts(response.data.unvisitedCount))
+      .then((response) => {setContacts(response.data.unvisitedCount);
+        console.log(response);
+        
+      })
+      
       .catch((error) => console.error("Error fetching contacts:", error));
 
     // Fetch volunteers

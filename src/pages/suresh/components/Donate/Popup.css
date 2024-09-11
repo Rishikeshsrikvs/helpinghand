@@ -1,0 +1,119 @@
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    width: 90%;
+    max-width: 700px;
+    min-height: 70vh;
+    background-size: 100% 100%;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+   
+     background-color:rgba(0, 0, 0, 0.7);
+  
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+  }
+  
+  .popup-form {
+    /* background: rgba(255, 255, 255, 0.9); */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .frequency-selector button {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .frequency-selector button.active {
+    background: #0699FF;
+    color: #fff;
+    border-color: #0699FF;
+  }
+  
+  .currency-amount input {
+    width: 80px;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .amount-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .amount-control input {
+    width: 80px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 10px;
+  }
+  
+  .amount-control .decrement-btn,
+  .amount-control .increment-btn {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .total-amount {
+    margin: 20px 0;
+  }
+  
+  .total-amount h3 {
+    margin-bottom: 5px;
+  }
+  
+  .popup-overlay .donate-btn {
+    width: 100%;
+    padding: 10px;
+    background: #0699FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  

@@ -30,7 +30,7 @@ const Gallery = () => {
       <div className="gallery-container">
         <div className="hero-image"></div>
         <div className="gall-container">
-          <Marquee className="gall-row" speed={300}>
+          <Marquee className="gall-row" speed={100} pauseOnHover={"true"}>
             {images.map((image) => (
               <img
                 key={image._id}
@@ -39,7 +39,7 @@ const Gallery = () => {
               />
             ))}
           </Marquee>
-          <Marquee className="gall-row" speed={300} direction={"right"}>
+          <Marquee className="gall-row" speed={100} direction={"right"} pauseOnHover={"true"}>
             {images.toReversed().map((image) => (
               <img
                 key={image._id}

@@ -1,5 +1,6 @@
 import React from "react";
 import "./AdminDashboard.css";
+import ProtectedRoute from './../../../adminpages/auth/ProtectedRoute.jsx';
 import logo from "../Admin/Adminimage/logo.png"
 import dashboard from "../Admin/Adminimage/dashboard.png"
 import gallery from "../Admin/Adminimage/gallery.png"
@@ -22,6 +23,7 @@ import { Route,Routes } from 'react-router-dom';
 
 const AdminDashboard = () => {
   return (
+    <ProtectedRoute>
     <div className="page-container">
       <div className="sidebar">
         <div className="logocontainer">
@@ -95,6 +97,7 @@ const AdminDashboard = () => {
 
       
     </div>
+    </ProtectedRoute>
   );
 };
 

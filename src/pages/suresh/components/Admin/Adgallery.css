@@ -61,7 +61,7 @@
 .upload-btn{
     width: 225px;
     margin-bottom: 15px;
-    height: 46px;
+    padding: 10px   ;
     font-size: 16px;
     color: #135CFF;
     background: #FFFFFF;
@@ -70,9 +70,7 @@
     font-weight: 600;
     transition: all .3s ease;
 }
-#adgegalimg{
-  display: none;
-}
+
 .upload-btn:hover{
     transform: scale(1.02);
     background: #ddd8d8;
@@ -109,7 +107,11 @@
     background:none;
     border: none;
     outline: none;
+    padding: 10px 30px;
     font-weight: 600;
+    background-color: #808080;
+    margin-top: 20px;
+    border-radius: 4px;
 }
 .adgall-sub-btn:hover{
     transform: scale(1.02);
@@ -119,4 +121,20 @@
 .adgall-sub-btn:active{
     transform: scale(.98);
     color: #808080;
+}
+
+.success-message{
+  color: white;
+  margin-top: 5px;
+}
+.error-message{
+  color: rgb(250, 120, 81);
+  margin-top: 5px;
+
+}
+#adgegalimg{
+  display: none;
+}
+.upload-btn input{
+  display: none;
 }

@@ -11,6 +11,8 @@ const Landevent = () => {
     const fetchEvents = async () => {
       try {
         const response = await api.get('/getevent');
+        console.log(response.data);
+        
         const eventData = response.data.map((event) => ({
           id: event._id, // Assuming _id is the unique identifier
           title: event.event_name,
@@ -20,6 +22,7 @@ const Landevent = () => {
           imageUrl: `${api.defaults.baseURL}/event/${event._id}` // Dynamically generate image URL using baseURL from Axios instance
         }));
         setEvents(eventData);
+
       } catch (error) {
         console.error('Error fetching events:', error);
       }
