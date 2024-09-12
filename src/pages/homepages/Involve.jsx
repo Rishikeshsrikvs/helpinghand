@@ -149,7 +149,7 @@ const Involve = () => {
             </div>
           </div>
           <div className="informbtn">
-            <button type="submit">Submit</button>
+            <button type="submit" className='inforbutton'>Submit</button>
           </div>
           {successMessage && <p className="success-message">{successMessage}</p>}
         </form>

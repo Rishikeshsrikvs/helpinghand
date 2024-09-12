@@ -52,7 +52,7 @@ export const Header = () => {
          
         </ul>
         <div className='navcar'>
-        <li><NavLink to="Connect" className={({ isActive }) => (isActive ? 'active-link' : '')}>Cantact Us</NavLink></li>
+        <li><NavLink to="Connect" className={({ isActive }) => (isActive ? 'active-link' : '')}>Contact Us</NavLink></li>
 
         </div>
       </div>

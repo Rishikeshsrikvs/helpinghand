@@ -1,7 +1,7 @@
 .landparent{
     width: 100%;
    
-    padding-top: 100px;
+  
 }
 .land3main{
     width: 85vw;
@@ -17,6 +17,7 @@
 .land3main h1{
     text-align: center;
     width: 70%;
+    text-transform: capitalize;
     
 }
 .land4main{
@@ -335,6 +336,7 @@ text-align: center;
     padding: 2%;
     
     flex-direction: row;
+    margin: 10vh auto;
 
 }
 .l10left{

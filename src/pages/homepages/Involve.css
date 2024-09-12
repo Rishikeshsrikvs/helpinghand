@@ -121,12 +121,17 @@ color: black;
 }
 .invsub input{
     margin-top: 5px;
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
 }
 .informbtn{
     text-align: center;
 }
-.informbtn button{
+.informbtn .inforbutton{
+    color: white;
     padding: 10px 30px;
     background: black;
-    color: white'
+    
 }

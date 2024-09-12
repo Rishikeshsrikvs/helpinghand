@@ -24,7 +24,6 @@ const Donate = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [showPopup, setShowPopup] = useState(false);  // State to control popup visibility
   const [selectedImage, setSelectedImage] = useState(null);  // State to store the clicked image
-  const [selectedText, setSelectedText] = useState(''); // Store selected donation type text
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -50,15 +49,13 @@ const Donate = () => {
     fetchRazorpayKey();
   }, []);
 
-  const handlePay = async (amount, donationFrequency ,selectedText) => {
+  const handlePay = async () => {
     try {
       console.log("Pay clicked");
-      console.log("check",amount,selectedText,donationFrequency);
-      
       const response = await api.post('/pay', {
-        donationType: selectedText, // Use the selected donation type text
-        donationAmount :amount,
-        conOMY: donationFrequency // Use the selected frequency
+        donationType: "fooddonation",
+        donationAmount: 25000,
+        conOMY: "month"
       });
 
       if (response.data.order) {
@@ -97,22 +94,21 @@ const Donate = () => {
   };
 
   // Function to handle image click
-  const handleImageClick = (imageUrl, text) => {
+  const handleImageClick = (imageUrl) => {
     console.log("clicked");
     setSelectedImage(imageUrl);  // Set the selected image dynamically
-    setSelectedText(text);  // Set the selected donation type text
     setShowPopup(true);  // Show the popup
   };
 
   const cardData = [
-    { id: "1", text: "Sponsor a Meal for child", imageUrl: card1 },
-    { id: "2", text: "Sponsor a meal for homeless people", imageUrl: card2 },
-    { id: "3", text: "Sponsor a Child", imageUrl: card3 },
-    { id: "5", text: "Support orphanage", imageUrl: card4 },
-    { id: "6", text: "Sponsor a child education", imageUrl: card5 },
-    { id: "4", text: "Sponsor a Child care kit", imageUrl: card6 },
-    { id: "7", text: "Support handicapped", imageUrl: card7 },
-    { id: "8", text: "Flood relief", imageUrl: card8 },
+    { id: "1", text:"Sponsor a Meal for child",imageUrl: card1 },
+    { id: "2",text:"Sponsor a meal for homeless people", imageUrl: card2 },
+    { id: "3",text:"Sponsor a Child", imageUrl: card3 },
+    { id: "5",text:"support orphanage", imageUrl: card4 },
+    { id: "6",text:"Sponsor a child education", imageUrl: card5 },
+    { id: "4",text:"Sponsor a Child care kit", imageUrl: card6 },
+    { id: "7",text:"support handicapped", imageUrl: card7 },
+    { id: "8",text:"flood relief", imageUrl: card8 },
   ];
 
   return (
@@ -144,7 +140,7 @@ const Donate = () => {
             to basic needs, such as shelter, healthcare, and nutrition, leading
             them towards a life of dignity and hope for a brighter future.
           </p>
-          <button className="donate-btn" onClick={() => handlePay(25000, 'ONCE')} disabled={!razorpayKey}>Donate Now</button>
+          <button className="donate-btn" onClick={handlePay} disabled={!razorpayKey}>Donate Now</button>
           {errorMessage && <div className="error-message">{errorMessage}</div>}
         </div>
         <div className="cardgrid">
@@ -154,7 +150,7 @@ const Donate = () => {
                 key={card.id}
                 imageUrl={card.imageUrl}
                 text={card.text}
-                onClick={handleImageClick}  // Correctly pass the image URL and text of the clicked card
+                onClick={handleImageClick}  // Correctly pass the image URL of the clicked card
               />
             ))}
           </div>
@@ -165,9 +161,7 @@ const Donate = () => {
         <Popup 
           image={selectedImage} 
           onClose={() => setShowPopup(false)}  // Close popup on button click
-          handlePay={handlePay}
-          selectedText={selectedText}
-            // Pass handlePay function to Popup
+          handlePay={handlePay}  // Pass handlePay function to Popup
         />
       )}
     </div>
@@ -175,3 +169,52 @@ const Donate = () => {
 };
 
 export default Donate;
+
+
+
+
+import React, { useEffect, useState } from 'react';
+
+const Popup = ({ image, onClose, handlePay, selectedText }) => {
+  const [donationFrequency, setDonationFrequency] = useState('ONCE');
+  const [currency, setCurrency] = useState('INR');
+  const [amount, setAmount] = useState(250);
+
+  const incrementAmount = () => setAmount(amount + 50);
+  const decrementAmount = () => setAmount(amount > 50 ? amount - 50 : amount);
+
+  const handleDonate = () => {
+    // Call the handlePay function passed from Donate with the current values
+    handlePay(amount, donationFrequency, selectedText);
+  };
+
+  return (
+    <div className="popup-overlay">
+      <div className="popup-content" style={{ backgroundImage: `url(${image})` }}>
+        <button className="close-btn" onClick={onClose}>X</button>
+        <div className="popup-form">
+          <div className="frequency-selector">
+            <button className={donationFrequency === 'ONCE' ? 'active' : ''} onClick={() => setDonationFrequency('ONCE')}>ONCE</button>
+            <button className={donationFrequency === 'MONTHLY' ? 'active' : ''} onClick={() => setDonationFrequency('MONTHLY')}>MONTHLY</button>
+            <button className={donationFrequency === 'YEARLY' ? 'active' : ''} onClick={() => setDonationFrequency('YEARLY')}>YEARLY</button>
+          </div>
+          <div className="currency-amount">
+            <input type="text" value={currency} onChange={(e) => setCurrency(e.target.value)} />
+          </div>
+          <div className="amount-control">
+            <button className="decrement-btn" onClick={decrementAmount}><span>-</span></button>
+            <input type="number" value={amount} className="controlamount" />
+            <button className="increment-btn" onClick={incrementAmount}><span>+</span></button>
+          </div>
+          <div className="total-amount">
+            <h3>Total Amount</h3>
+            <p>{currency} {amount}</p>
+          </div>
+          <button className="donate-btn" onClick={handleDonate}>Donate</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Popup;

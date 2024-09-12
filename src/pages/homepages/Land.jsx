@@ -27,6 +27,8 @@ import l10up1 from './../../assets/Land/l10up1.png';
 import l10up2 from './../../assets/Land/l10up2.png';
 import Landprogram from './home components/Landprogram';
 import Landevent from './home components/Landevent';
+import Landimageslider from './home components/Landimageslider';
+import Grandvolunteer from './home components/Grandvolunteer.jsx';
 const Land = () => {
     
   useEffect(() => {
@@ -35,12 +37,32 @@ const Land = () => {
     const navigate=useNavigate();
   return (
     <div className='landparent'>
-      
+    <Landimageslider/>
+    <Grandvolunteer/>
     <Landevent/>
+    
     <div className="land3main">
         
         <h1>“help is different from ‘timely help’ sending some many to an orphanage every month is a help, but spontaneously helping during a critical time without expecting any reward is timely help”</h1>
     </div>
+    <div className="land10main">
+        <div className="l10left">
+            <h1>JOIN US</h1>
+            <p>Together, we can make a difference. Join us in helping those in need—every small action counts.</p>
+            <div className="l10leftbtn"><button onClick={()=>(navigate('/getinvolved'))}>Let's Help</button></div>
+        </div>
+        <div className="l10right">
+            <div className="l10up">
+                <img src={l10up1} alt="" />
+                <img src={l10up2} alt="" />
+            </div>
+            <div className="l10down">
+                <img src={l10dn1} alt="" />
+                <img src={l10dn2} alt="" />
+            </div>
+        </div>
+    </div>
+   
     <div className="land4main">
         <div className="land4card">
             <img src={l41} alt="" />
@@ -146,23 +168,7 @@ const Land = () => {
             <div className="l9right"><img src={l9right} alt="" /></div>
         </div>
     </div>
-    <div className="land10main">
-        <div className="l10left">
-            <h1>JOIN US</h1>
-            <p>Together, we can make a difference. Join us in helping those in need—every small action counts.</p>
-            <div className="l10leftbtn"><button onClick={()=>(navigate('/donate'))}>Let's Help</button></div>
-        </div>
-        <div className="l10right">
-            <div className="l10up">
-                <img src={l10up1} alt="" />
-                <img src={l10up2} alt="" />
-            </div>
-            <div className="l10down">
-                <img src={l10dn1} alt="" />
-                <img src={l10dn2} alt="" />
-            </div>
-        </div>
-    </div>
+
     </div>
   )
 }
