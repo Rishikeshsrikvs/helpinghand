@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    margin-top: vh;
+   
   }
   
   .landeventparent > h1 {
@@ -69,6 +69,7 @@
     overflow-y: hidden;
     width: 98%;
     padding: 10px;
+    height: 300px;
     word-wrap: break-word;
     
 
@@ -98,3 +99,16 @@
     transition: transform 0.3s ease; /* Smooth scaling transition */
   }
   
+
+  @media (max-width: 768px){
+    .lecon {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      margin-top: 4vh;
+    }
+
+  }

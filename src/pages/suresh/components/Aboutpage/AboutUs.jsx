@@ -72,13 +72,13 @@ const AboutUs = () => {
   return (
     <>
       <div className="aboutus">
-        <div className="gradient1">
+        <div className="about-gradient1">
           <img src={graleft} alt="gradient" />
         </div>
-        <div className="gradient2">
+        <div className="about-gradient2">
           <img src={graright} alt="gradient" />
         </div>
-        <div className="tittle-container">
+        <div className="about-tittle-container">
           <h1>About us</h1>
           <p>
             Founded in 2012 by A M Baala, our charity is built on the principle

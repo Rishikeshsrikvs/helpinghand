@@ -15,8 +15,8 @@ const Footer = () => {
         <div className="footback">
             <div className="footiconcontainer">
                <Link><img src={li} alt="" /></Link>
-               <Link><img src={ins} alt="" /></Link>
-               <Link><img src={face} alt="" /></Link>
+               <Link to="https://www.instagram.com/helpinghands.charitabletrust/"  target="_blank"><img src={ins} alt="" /></Link>
+               <Link to="https://www.facebook.com/profile.php?id=61554899485699"  target="_blank"><img src={face} alt="" /></Link>
                <Link><img src={twit} alt="" /></Link>
             </div>
         </div>
@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
           <div className='footsub'>
                 <div className="fsubleft">
-                    <Link>designed by sri KVS Tech</Link>
+                    <Link to= "https://srikvstech.com/">designed by sri KVS Tech</Link>
                 </div>
                 <div className="fsubright">
                     <Link>privacy policy</Link>

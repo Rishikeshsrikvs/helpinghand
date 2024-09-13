@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Landingslider.css';
 const Landingslider3 = () => {
   return (
     <div className="landingslider3">

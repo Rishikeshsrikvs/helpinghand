@@ -4,7 +4,7 @@ import './Grandvolunteer.css';
 import helimg from './../../../assets/grandvolunteer/hand.png';
 import apj1 from './../../../assets/grandvolunteer/kalam.png';
 import mother1 from './../../../assets/grandvolunteer/tresa.png';
-import vallalar from './../../../assets/grandvolunteer/vallalar.png';
+import vallalar from './../../../assets/grandvolunteer/vallalar.jpg';
 
 
 

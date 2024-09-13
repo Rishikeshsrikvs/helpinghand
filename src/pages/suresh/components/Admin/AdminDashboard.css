@@ -121,3 +121,25 @@
   
  
 }
+
+
+.lists .icon {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 3px;
+  
+ 
+}
+
+.lists .icon:hover {
+  background-color: #5f5d5d; /* Hover background color */
+}
+
+.lists .icon.active-link {
+  background-color: #0359b6; /* Active link background color */
+  color: white; /* Active link text color */
+}
+
+/* Rest of your existing CSS styles */

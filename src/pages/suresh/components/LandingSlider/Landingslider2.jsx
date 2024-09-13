@@ -1,5 +1,7 @@
 import React from "react";
 import ls2 from "./lsimage/ls2image.jpg";
+import './Landingslider.css';
+
 const Landingslider2 = () => {
   return (
     <div className="landingslider2">

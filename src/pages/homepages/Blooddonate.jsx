@@ -22,7 +22,7 @@ const Blooddonate = () => {
 
   return (
     <div className='bloodmain'>
-      <section className="hero">
+      <section className="bdhero">
         <h1>Your Paint Has The <span className="color-red">Power</span> To Paint</h1>
         <h1>A <span className="color-green">Smile</span> On Someone Else’s <span className="color-red">Face</span>.</h1>
         <h4>Blood Donation Is A Powerful Way To Make A Difference. In Just A Few Minutes, 

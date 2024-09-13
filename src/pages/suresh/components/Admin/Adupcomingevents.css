@@ -65,6 +65,8 @@
   .DESC{
     text-align: center;
     width:20% ;
+    word-wrap:break-word;
+    overflow: hidden;
   }
   .evbtn{
     width: 20%;

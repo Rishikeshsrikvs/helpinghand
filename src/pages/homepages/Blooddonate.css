@@ -1,5 +1,5 @@
 .bloodmain{
-    padding-top: 20vh;
+    padding-top: 2vh;
 }
 
 
@@ -10,16 +10,35 @@
   .color-green {
     color: #008B4A;
   }
-  .hero {
+  .bdhero {
     font-family: Arial, sans-serif;
     text-align: center;
     font-size: larger;
    margin-bottom: 10px;
+
     
   }
- .hero  h1 {
-    font-size: 2em;
-    font-weight: bold;
+ .bdhero  h1 {
+   
+    margin: 3vh auto;
+    font-family: Plus Jakarta Sans;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 80.64px;
+  text-align: center;
+
+    
+  }
+  .bdhero  h4{
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    font-family: Plus Jakarta Sans;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 44px;
+  text-align: center;
+
   }
   .image-row {
     margin: 10vh auto;
@@ -29,4 +48,40 @@
     height: 400px;
     object-fit: cover;
     flex: 1;
+  }
+
+
+  @media screen and (max-width : 768px){
+
+    .bdhero  h1 {
+   
+      margin: 3vh auto;
+      font-family: Plus Jakarta Sans;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25.2px;
+    text-align: center;
+
+  
+      
+    }
+    .bdhero  h4{
+      width: 80%;
+      text-align: center;
+      margin: 0 auto;
+      font-family: Plus Jakarta Sans;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: center;
+
+    }
+    .image-row img {
+      max-width: 30%;
+      height: 150px;
+      object-fit: cover;
+      flex: 1;
+    }
+
+
   }

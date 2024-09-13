@@ -5,5 +5,7 @@
 .bloodtable{
     border: none;
     border-collapse: collapse;
+    width: 100%;
 
 }
+@media screen and (max-width : 768px){}

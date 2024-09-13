@@ -24,14 +24,14 @@ const Home = () => {
   return (
     <div>
       <Header/>
-      {isImageVisible && (
+      {/* {isImageVisible && (
         <div className="popupimage-overlay" onClick={closeImageOverlay}>
           <div className="popupimage-container" onClick={(e) => e.stopPropagation()}>
             <button className="popupcloseimage-button" onClick={closeImageOverlay}>X</button>
             <img src={logo} alt="Sample" />
           </div>
         </div>
-      )}
+      )} */}
 
       
       <div className="homemain">

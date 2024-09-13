@@ -77,3 +77,26 @@
   color: #000000;
 
 }
+
+
+@media screen and (max-width : 768px){
+  .request-container{
+    width: 80%;
+    padding: 30px;
+  }
+  .request-row{
+    flex-direction: column;
+    gap: 10px;
+
+
+    
+  }
+  .request-group{
+    width: 100%;
+   
+  }
+  .request-label{
+    margin-bottom: 4px;
+  }
+
+}

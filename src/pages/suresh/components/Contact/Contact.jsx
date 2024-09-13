@@ -139,10 +139,10 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="form-container">
+          <div className="conform-container">
             <form onSubmit={handleSubmit}>
-              <div className="form-row">
-                <div className="form-group">
+              <div className="conform-row">
+                <div className="conform-group">
                   <label htmlFor="contactName">
                     Name <span className="required">*</span>
                   </label>
@@ -156,7 +156,7 @@ const Contact = () => {
                   {errors.contactName && <p className="error">{errors.contactName}</p>}
                   <p>First Name</p>
                 </div>
-                <div className="form-group">
+                <div className="conform-group">
                   <label htmlFor="contact">
                     Phone Number <span className="required">*</span>
                   </label>
@@ -171,8 +171,8 @@ const Contact = () => {
                   <p>Enter Your Number</p>
                 </div>
               </div>
-              <div className="form-row">
-                <div className="form-group">
+              <div className="conform-row">
+                <div className="conform-group">
                   <label htmlFor="email">
                     Email <span className="required">*</span>
                   </label>
@@ -187,8 +187,8 @@ const Contact = () => {
                   <p>Example@Example.Com</p>
                 </div>
               </div>
-              <div className="form-row">
-                <div className="form-group full-width">
+              <div className="conform-row">
+                <div className="conform-group full-width">
                   <label htmlFor="message">Message</label>
                   <textarea
                     id="message"
@@ -244,7 +244,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="map-container">
-                <h1>map</h1>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15543.235602223122!2d80.0982294!3d13.1112895!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52630b6a082cd7%3A0xf00964b08b210778!2sGrand%20Events%20Catering%20Services!5e0!3m2!1sen!2sin!4v1725279766783!5m2!1sen!2sin" ></iframe>
               </div>
             </div>
           </div>

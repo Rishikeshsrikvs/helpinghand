@@ -6,6 +6,8 @@
     width: 100%;
     margin: 50px auto;
     text-align: center;
+   
+    
   }
   
  .arp-container h1 {
@@ -13,29 +15,38 @@
     margin-bottom: 20px;
     font-weight: bold;
     color: #000;
+    text-align: center;
   }
   .arp-btns{
     margin: 0 auto;
+
   }
   
   .arp-form-container {
     width: 30%;
     margin-bottom: 30px;
     padding: 20px;
+    margin: 0 auto;
     border-radius: 10px;
     color: #000000;
   }
   .arp-form-year{
-    width: 172px;
-   margin: 0 auto;
+    width: 80%;
+    margin: 0 auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   
   }
   .arp-form-container label {
     font-weight: bold;
     font-size: 18px;
+    margin-bottom: 5px;
   }
   
   .arp-form-container input {
-    width: 230px;
+    width: 100%;
     padding: 10px 10px;
     border-radius: 5px;
     background-color: #000;

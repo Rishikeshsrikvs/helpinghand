@@ -1,7 +1,8 @@
 .involparent{
     width: 100%;
-    padding: 10vh 0;
-    padding-top: 12vh;
+    overflow: hidden;
+   
+   
 }
 .inheromain{
     padding: 10vh 0;
@@ -64,7 +65,7 @@ color: black;
     font-family: Plus Jakarta Sans;
     font-size: 36px;
     font-weight: 800;
-    line-height: 45.36px;
+    
     text-align: center;
 
 }
@@ -134,4 +135,38 @@ color: black;
     padding: 10px 30px;
     background: black;
     
+}
+
+@media (max-width: 768px){
+    .iherosub h1{
+        font-family: Plus Jakarta Sans;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 59.6px;
+    text-align: center;
+    color: white;
+    
+    }
+    .intitle p{
+        font-family: Plus Jakarta Sans;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 18.9px;
+        text-align: center;
+        width: 80%;
+    
+    }
+    .inform{
+        width: 80%;
+        margin: 0 auto;
+        padding: 2%;
+        display: flex;
+        gap: 15px;
+        background-color: white;
+        flex-direction: column;
+        
+    }
+    .invsub{
+        width: 80%;
+    }
 }

@@ -1,5 +1,5 @@
 .homemain{
-    padding-top: 180px;
+    padding-top: 200px;
     width: 100%;
 }
 .popupimage-overlay {
@@ -49,4 +49,12 @@
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+
+  @media screen and (max-width : 768px){
+
+    .homemain{
+      padding-top: 80px;
+      
+  }
   }

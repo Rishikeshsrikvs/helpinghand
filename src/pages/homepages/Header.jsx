@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css';
-// import logo from './../../assets/Header/logo.png';
 import logo from './../../assets/head/logo.png';
 import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // State to manage loading overlay
+
   let lastScrollTop = 0;
 
   const handleScroll = () => {
@@ -26,12 +27,21 @@ export const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Simulate loading effect with timeout
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000); // Adjust timing to match your logo animation duration
+    return () => clearTimeout(timer);
+  }, []);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <div className={`navbar-container ${isVisible ? 'visible' : 'hidden'}`}>
+      {isLoading && <div className="overlay"></div>} {/* Loading overlay */}
       <div className='navbar-logo'>
         <NavLink to="/"><img src={logo} alt="Logo" /></NavLink>
         <div className={`navbar-toggle ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
@@ -43,17 +53,14 @@ export const Header = () => {
       
       <div className={`navcontainer ${isMenuOpen ? 'active' : ''}`}>
         <ul className='navul'>
-          {/* <li><NavLink to="/" className={({ isActive }) => (isActive ? 'active-link' : '')}>Home</NavLink></li> */}
           <li><NavLink to="About" className={({ isActive }) => (isActive ? 'active-link' : '')}>About Us</NavLink></li>
           <li><NavLink to="ourprogram" className={({ isActive }) => (isActive ? 'active-link' : '')}>Our Programs</NavLink></li>
           <li><NavLink to="media" className={({ isActive }) => (isActive ? 'active-link' : '')}>Media</NavLink></li>
           <li><NavLink to="blooddonate" className={({ isActive }) => (isActive ? 'active-link' : '')}>Blood Donation</NavLink></li>
           <li><NavLink to="getinvolved" className={({ isActive }) => (isActive ? 'active-link' : '')}>Get Involved</NavLink></li>
-         
         </ul>
         <div className='navcar'>
-        <li><NavLink to="Connect" className={({ isActive }) => (isActive ? 'active-link' : '')}>Contact Us</NavLink></li>
-
+          <li><NavLink to="Connect" className={({ isActive }) => (isActive ? 'active-link' : '')}>Contact Us</NavLink></li>
         </div>
       </div>
     </div>

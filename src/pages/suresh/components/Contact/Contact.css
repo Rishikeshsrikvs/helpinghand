@@ -20,7 +20,7 @@
 }
 .contact-container .contact-content {
   width: 100%;
-  height: 600px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,7 +48,7 @@
 
 .contact-image{
   width: 750px;
-  height: 80vh;
+  height: auto;
   text-align: right;
   display: flex;
   flex-direction: column;
@@ -96,7 +96,7 @@
 }
 
 /* form con */
-.form-container {
+.conform-container {
   width: 50%;
   height: fit-content;
   margin-top: 13rem;
@@ -105,21 +105,28 @@
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 3vh auto;
+  
 }
 
-.form-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  width: 40%;
+.conform-row {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 80%;
+  margin: 0 auto;
+  
+}
+
+.conform-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
   position: relative; /* Needed for placeholder positioning */
 }
-.form-group p{
+.conform-group p{
   text-align: start;
   font-size: 14px;
   margin-top: 2px;
@@ -129,7 +136,11 @@
   margin-bottom: 5px;
   font-size: 14px;
   font-weight: bold;
+ 
+  text-align: left;
 }
+
+
 
 .required {
   color: red;
@@ -255,6 +266,10 @@ button:active{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     background: #d9d9d9;
   }
+  .map-container iframe{
+    width: 100%;
+    height: 100%;
+  }
   .map-container h1{
     font-size: 32px;
     text-transform: uppercase;
@@ -275,7 +290,7 @@ button:active{
   @media screen and (max-width : 768px) {
     .contact-heading h1{
       font-size: 28px;
-      margin: 4rem auto;
+      margin: 1em auto;
     }
     .contact-container .contact-content {
       width: 100%;
@@ -292,7 +307,7 @@ button:active{
     .contact-content .contact-text h1{ 
       width: 80%;
       padding-top: 0px;
-      height:20vh;
+      height: unset;
       font-size: 28px;
     }
     
@@ -357,7 +372,7 @@ button:active{
     }
 .contact-heading h1{
   font-size: 20px;
-  margin: 3rem auto;
+  margin: 1rem auto;
 }
 .contact-container .contact-content {
   width: 100%;
@@ -374,7 +389,7 @@ button:active{
 .contact-content .contact-text h1{ 
   width: 280px;
   padding-top: 0px;
-  height:30vh;
+  height:20vh;
   font-size: 20px;
 }
 
@@ -385,14 +400,14 @@ button:active{
   display: flex;
   flex-direction: column;
  align-items: flex-end;
-  
-  gap: 0px;
+  height: unset;
+  gap: 20px;
   
 }
 
 .con-image1{
   width: 100%;
-  height: 190px;
+  height: unset;
   display: flex;
   margin-right: -1.8rem;
 
@@ -403,15 +418,15 @@ button:active{
 }
 .con-image2{
   width: 100%;
-  
-  height: 190px;
+  height: unset;
+
   display: flex;
   margin-right: -5.8rem;
 
 }
 .con-image3{
   width: 100%;
-  height: 190px;
+  height: unset;
   display: flex;
   flex-direction: row;
   margin-top: -3rem;
@@ -432,10 +447,10 @@ button:active{
 }
 
 
-.form-container {
+.conform-container {
   width:100%;
   height: fit-content;
-  margin-top: 10rem;
+  margin-top: 1rem;
   background-color:#0699FF;
   padding: 30px;
   border-radius: 10px;
@@ -443,28 +458,28 @@ button:active{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-row {
+.conform-row {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-bottom:10px;
 }
 
-.form-group {
+.conform-group {
   width: 100%;
   display: flex;
   flex-direction: column;
   position: relative; 
   /* Needed for placeholder positioning */
 }
-.form-group p{
+.conform-group p{
   text-align: start;
   font-size: 10px;
   margin-top: 4px;
   margin-bottom: 15px;
 }
 
-label {
+.conform-group label {
   margin-bottom: 15px;
   font-size: 15px;
   font-weight: 600;

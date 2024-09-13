@@ -12,91 +12,74 @@ import Annualreport from "../Admin/Adminimage/Annualreport.png"
 import Adnotification from "./Adnotification";
 import Adgallery from "./Adgallery";
 import Adupcomingevents from "./Adupcomingevents";
-// import Adform from "./Adminform";
 import Admincreateevents from './Admincreateevents.jsx';
 import Admincontact from "./Admincontact";
 import Adminvol from "./Adminvol";
 import Admindonner from "./Admindonner";
 import AdminARP from "./AdminARP";
-import { Link } from "react-router-dom";
-import { Route,Routes } from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 
 const AdminDashboard = () => {
+  // Use location to determine the current path
+  const location = useLocation();
+
   return (
     <ProtectedRoute>
-    <div className="page-container">
-      <div className="sidebar">
-        <div className="logocontainer">
-        <img src={logo} alt="" />
+      <div className="page-container">
+        <div className="sidebar">
+          <div className="logocontainer">
+            <img src={logo} alt="" />
+          </div>
+          <ul className="lists">
+            <Link to="/admin/SHRA/dashboard" className={`icon ${location.pathname === '/admin/SHRA/dashboard' ? 'active-link' : ''}`}>
+              <img src={dashboard} alt="" />
+              <li>Dashboard</li>
+            </Link>
+            <Link to="/admin/SHRA/gallery" className={`icon ${location.pathname === '/admin/SHRA/gallery' ? 'active-link' : ''}`}>
+              <img src={gallery} alt="" />
+              <li>Gallery</li>
+            </Link>
+            <Link to="/admin/SHRA/events" className={`icon ${location.pathname === '/admin/SHRA/events' ? 'active-link' : ''}`}>
+              <img src={event} alt="" />
+              <li>Events</li>
+            </Link>
+            <Link to="/admin/SHRA/contact" className={`icon ${location.pathname === '/admin/SHRA/contact' ? 'active-link' : ''}`}>
+              <img src={contact} alt="" />
+              <li>Contacts</li>
+            </Link>
+            <Link to="/admin/SHRA/volunteer" className={`icon ${location.pathname === '/admin/SHRA/volunteer' ? 'active-link' : ''}`}>
+              <img src={volunteer} alt="" />
+              <li>Volunteer</li>
+            </Link>
+            <Link to="/admin/SHRA/donors" className={`icon ${location.pathname === '/admin/SHRA/donors' ? 'active-link' : ''}`}>
+              <img src={donors} alt="" />
+              <li>Donors</li>
+            </Link>
+            <Link to="/admin/SHRA/annual-report" className={`icon ${location.pathname === '/admin/SHRA/annual-report' ? 'active-link' : ''}`}>
+              <img src={Annualreport} alt="" />
+              <li>Annual report</li>
+            </Link>
+          </ul>
         </div>
-        <ul className="lists">
-          <Link to="/admin/SHRA/dashboard" className="icon">
-            <img src={dashboard} alt="" />
-            <li>Dashboard</li>
-          </Link>
-          <Link to="/admin/SHRA/gallery" className="icon">
-            <img src={gallery} alt="" />
-            <li>Gallery</li>
-          </Link>
-          <Link to="/admin/SHRA/events" className="icon">
-            <img src={event} alt="" />
-            <li>Events</li>
-          </Link>
-          <Link to="/admin/SHRA/contact"className="icon">
-            <img src={contact} alt="" />
-            <li>Contacts</li>
-          </Link>
-          <Link to="/admin/SHRA/volunteer" className="icon">
-            <img src={volunteer} alt="" />
-            <li>Volunteer</li>
-          </Link>
-          <Link to="/admin/SHRA/donors" className="icon">
-            <img src={donors} alt="" />
-            <li>Donors</li>
-          </Link>
-          <Link to="/admin/SHRA/annual-report" className="icon">
-            <img src={Annualreport} alt="" />
-            <li> Annual report</li>
-          </Link>
-         
-          
-          
-          
-        </ul>
-      </div>
-      <div className="topbar">
+        <div className="topbar">
           <div className="topbar-header">
-              <h1>helping hands charity</h1>
+            <h1>helping hands charity</h1>
           </div>
-          
+        </div>
+        <div className="topbar-content">
+          <Routes>
+            <Route path="/dashboard" element={<Adnotification />} />
+            <Route path="/gallery" element={<Adgallery/>} />
+            <Route path="/events" element={<Adupcomingevents/>} />
+            <Route path="/createevent" element={<Admincreateevents/>} />
+            <Route path="/contact" element={<Admincontact/>} />
+            <Route path="/volunteer" element={<Adminvol/>} />
+            <Route path="/donors" element={<Admindonner/>} />
+            <Route path="/annual-report" element={<AdminARP/>} />
+          </Routes>
+        </div>
       </div>
-      <div className="topbar-content">
-              <Routes>
-                      
-                      <Route path="/dashboard" element={<Adnotification />} />
-                      <Route path="/gallery" element={<Adgallery/>} />
-                      <Route path="/events" element={<Adupcomingevents/>} />
-                      <Route path="/createevent" element={<Admincreateevents/>} />
-                      <Route path="/contact" element={<Admincontact/>} />
-                      <Route path="/volunteer" element={<Adminvol/>} />
-
-                      <Route path="/donors" element={<Admindonner/>} />
-                      <Route path="/annual-report" element={<AdminARP/>} />
-
-                {/* <Adnotification/> */}
-                {/* <Adgallery/> */}
-                {/* <Adupcomingevents/> */}
-                
-                {/* <Admincontact/> */}
-                {/* <Adminvol/> */}
-                {/* <Admindonner/> */}
-                {/* <AdminARP/> */}
-              </Routes>
-          </div>
-      
-
-      
-    </div>
     </ProtectedRoute>
   );
 };

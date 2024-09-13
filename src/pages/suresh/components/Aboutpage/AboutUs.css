@@ -9,51 +9,53 @@
 
 .aboutus{
     width: 95%;
-    margin: 5vh auto;
-    padding-top: 5vh;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 
-.gradient2,
-.gradient1 {
+.about-gradient2,
+.about-gradient1 {
   position: absolute;
   width: 994px;
   height: 490px;
 }
-.gradient2,
-.gradient1 img {
+.about-gradient2,
+.about-gradient1 img {
   width: 100%;
 }
-.gradient1 {
+.about-gradient1 {
   width: 900px;
   left: -1rem;
   top: -18rem;
   z-index: -10;
 }
-.gradient2 {
+.about-gradient2 {
   width: 900px;
   height: 290px;
   right: -12rem;
   top: -20rem;
   z-index: -10;
 }
-.gradient2 img{
+.about-gradient2 img{
   width: 100%;
 }
 
 /* tittle */
-.tittle-container{
+.about-tittle-container{
   width: 100%;
 }
-.tittle-container p{
+.about-tittle-container p{
   width: 90%;
   margin: 2% auto;
   text-align: center;
   line-height: 40px;
   font-size: 20px;
+  font-weight: 600;
   text-transform: capitalize;
+  color: #000;
 }
-.tittle-container h1{
+.about-tittle-container h1{
   width: 100%;
   text-align: center;
   margin: 5% auto;
@@ -168,7 +170,8 @@
   height: 455px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  
   
 }
 .gallery-con1{
@@ -240,6 +243,7 @@
 .about-donate-section {
   width: 100%;
   margin: 4rem auto;
+  text-align: center;
 }
 .about-donate-section .donate-section-content h3 {
   text-align: center;
@@ -251,28 +255,24 @@
   width: 90%;
   text-align: center;
   font-size: 24px;
-  margin: 3rem;
   font-weight: 500;
   text-transform: capitalize;
   line-height: 44px;
   margin: 0 auto;
+  color: #000;
+  margin-bottom: 40px;
 }
-.about-donate-section .donate-section-content button {
+ .abs-dn-button {
   width: 200px;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: none;
   color: #fff;
   background: #000;
   border-radius: 5px;
   font-size: 16px;
-  margin: 3rem;
   font-weight: 500;
   text-transform: capitalize;
   line-height: 44px;
-  margin: 4rem auto;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -366,6 +366,7 @@
   line-height: 46px;
   align-items: center;
   text-transform: capitalize;
+  color: #000;
 }
 
 /* vallnow */
@@ -492,51 +493,50 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 780px) {
-  .gradient2,
-.gradient1 {
+@media screen and (max-width :1025px) {
+  .about-gradient2,
+.about-gradient1 {
   position: absolute;
-  width: 994px;
-  height: 490px;
+  width: 90%;
+  height: 190px;
 }
-.gradient2,
-.gradient1 img {
+.about-gradient2,
+.about-gradient1 img {
   width: 100%;
 }
-.gradient1 {
+.about-gradient1 {
   width: 100%;
   left: 0rem;
   top: 0rem;
   z-index: -10;
 }
-.gradient2 {
+.about-gradient2 {
   width: 100%;
   height: 290px;
   right: 0rem;
   top: -5rem;
   z-index: -10;
 }
-.gradient2 img{
+.about-gradient2 img{
   width: 100%;
 }
 
 /* tittle */
-.tittle-container p{
-  width: 350px;
-  line-height: 19px;
-  font-size: 12px;
+.about-tittle-container p{
+  width: 90%;
+  line-height: 29px;
+  font-size: 15px;
 }
-.tittle-container h1{
-  font-size: 22px;
+.about-tittle-container h1{
+  font-size: 100%;
 }
 
 /* abtcontent */
 .about-content{
-  flex-wrap: wrap;
   margin: 4rem auto;
 }
 .about-content .about-box{
-   width: 370px;
+   width: 90%;
    height: 240px;
    margin: 0 auto;
    
@@ -563,8 +563,327 @@
 
 /* value */
 .about-value{
+  width: 100%;
   margin-bottom: 5rem;
   padding: 20px 10px;
+  margin: 0 auto;
+}
+
+.about-value h2::after{
+  content: "";
+  width: 15.8%;
+  margin: 7px 5px;
+ 
+}
+.about-value h2{
+  font-size: 15px;
+  
+}
+.about-value p{
+  font-size: 14px;
+  width: 70%;
+  margin: 1rem auto;
+  font-weight: 800;
+  line-height: 25px;
+}
+
+/* video */
+.about-videos-tittle h3{
+  padding-top: 20px;
+  font-size: 32px;
+}
+.about-videos-tittle .videos .video-box{
+  width: 340px;
+  height: 190px;
+}
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* donate */
+.about-donate-section .donate-section-content p {
+  width: 90%;
+  font-size: 16px;
+  line-height: 1.6rem;
+  text-align: center;
+}
+.about-donate-section .donate-section-content h3 {
+  text-align: center;
+  font-size: 20px;
+  margin: 3rem;
+}
+
+.abs-dn-button {
+  width: 180px;
+  text-align: center;
+  border: none;
+  color: #fff;
+  background: #000;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.about-volunteers .volunteers {
+  text-align: center;
+}
+.about-volunteers .volunteers .volunteers-image {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+}
+.about-volunteers .volunteers .volunteers-text {
+  width: 90%;
+  height: 130px;
+  padding: 0px 0px;
+  margin: 0 auto;
+}
+.about-volunteers .volunteers-tittle h1 {
+  text-align: center;
+  width: 95%;
+  font-size: 22px;
+  text-transform: capitalize;
+  margin: 1rem auto;
+}
+.about-volunteers .volunteers .volunteers-text {
+ display: none;
+}
+
+/* vallnow */
+.volunteers-now {
+  width: 100%;
+  height: 190px;
+  display: flex;
+  margin: 4rem auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+.volunteers-now .backleft{
+ display: none;
+}
+
+.volunteers-now .backright{
+  width: 155px;
+position: absolute;
+right:-.5rem;
+z-index: -5;
+}
+ .backright img{
+width: 100%;
+}
+.volunteers-now h1 {
+  font-size: 25px;
+}
+ .vall-now-btns {
+  padding: 8px 18px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: #0699ff;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+.year-dropdown {
+  text-align: center;
+  width: 200px;
+  padding: 14px 20px;
+
+  font-size: 16px;
+}
+.about-annual-poster {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+  /* gallery  */
+  
+.about-gallery-container {
+  width: 100%;
+ gap: 25px;
+ flex-direction: column;
+  
+}
+.gallery-con1{
+  width:342px;
+  height: 455px;
+  display: flex;
+  gap: 15px;
+}
+
+.gall1{
+  width: 190.77px;
+  height: 109.91px;
+}
+.gall2{
+  width: 137.03px;
+  height: 245px;
+}
+.gallery-con2{
+  width:342px;
+  height: 455px;
+  display: flex;
+  gap: 15px;
+}
+.gall3{
+  width: 190.77px;
+  height: 109.91px;
+}
+.gall4{
+  width: 190.77px;
+  height: 109.91px;
+}
+.gall5{
+  width: 137.03px;
+  height: 245px;
+}
+.year-dropdown {
+  width: 235.71px;
+  padding: 8px 17px;
+  font-size: 10px;
+  border-radius: 3px;
+}
+.submit-button {
+  padding: 8px 17px;
+  font-size: 10px;
+  border-radius: 3px;
+}
+
+
+/* annual image */
+.about-annual-report {
+  width: 100%;
+  text-align: center;
+}
+
+.about-annual-report .annual-report-tittle {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 2rem auto;
+}
+
+.year-dropdown option {
+  background-color: white;
+  color: black;
+}
+
+.submit-button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+.submit-button:active {
+  transform: scale(0.9);
+}
+
+.about-annual-poster {
+  width: 100%;
+  margin-bottom: 4rem;
+}
+.about-annual {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+}
+
+.annual-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+.about-annual .annual-image {
+  width: 315px;
+  margin: 0 auto;
+}
+}
+@media screen and (max-width: 780px) {
+  .about-gradient2,
+.about-gradient1 {
+  position: absolute;
+  width: 994px;
+  height: 490px;
+}
+.about-gradient2,
+.about-gradient1 img {
+  width: 100%;
+}
+.about-gradient1 {
+  width: 100%;
+  left: 0rem;
+  top: 0rem;
+  z-index: -10;
+}
+.about-gradient2 {
+  width: 100%;
+  height: 290px;
+  right: 0rem;
+  top: -5rem;
+  z-index: -10;
+}
+.about-gradient2 img{
+  width: 100%;
+}
+
+/* tittle */
+.about-tittle-container p{
+  width: 90%;
+  line-height: 19px;
+  font-size: 12px;
+}
+.about-tittle-container h1{
+  font-size: 22px;
+}
+
+/* abtcontent */
+.about-content{
+  flex-wrap: wrap;
+  margin: 4rem auto;
+}
+.about-content .about-box{
+   width: 90%;
+   height: 240px;
+   margin: 0 auto;
+   
+}
+.about-box h2::after{
+   content: "";
+   width:40%;
+}
+.about-content .about-box p{
+   font-size: 12px; 
+   font-weight: 800;
+  
+    padding: 10px 15px;
+   margin: 0 auto;
+   text-transform: uppercase;
+   color: #fff;
+   line-height: 1.8rem;
+   font-style: italic;
+
+}
+.about-content .about-box h2{
+   font-size: 22px;
+}
+
+/* value */
+.about-value{
+  width: 90%;
+  margin-bottom: 5rem;
+  padding: 20px 10px;
+  margin: 0 auto;
 }
 
 .about-value h2::after{

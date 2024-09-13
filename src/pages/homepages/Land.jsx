@@ -151,20 +151,23 @@ const Land = () => {
         <h1>Gallery</h1>
         <div className="l9gal">
             <div className="l9left"><img src={l9left} alt="" /></div>
-            <div className="l9center">
-                <div>
-                    <img src={l91} alt="" />
+           
+                <div className="l9c1">
+                   
+                        <img src={l91} alt="" />
+                   
+                  
+                        <img src={l92} alt="" />
+                    
                 </div>
-                <div>
-                    <img src={l92} alt="" />
+                <div className="l9c2">
+                   
+                        <img src={l93} alt="" />
+                    
+                        <img src={l94} alt="" />
+                    
                 </div>
-                <div>
-                    <img src={l93} alt="" />
-                </div>
-                <div>
-                    <img src={l94} alt="" />
-                </div>
-            </div>
+            
             <div className="l9right"><img src={l9right} alt="" /></div>
         </div>
     </div>
