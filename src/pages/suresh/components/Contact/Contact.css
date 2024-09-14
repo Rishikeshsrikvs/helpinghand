@@ -55,7 +55,7 @@
  align-items: flex-end;
   
   gap: 60px;
-  
+
 }
 
 .con-image1{
@@ -314,7 +314,7 @@ button:active{
 .contact-image{
   margin: 4rem auto;
   width: 100%;
-  height:500px;
+  height:100vh;
   text-align: right;
   display: flex;
   flex-direction: column;
@@ -400,7 +400,7 @@ button:active{
   display: flex;
   flex-direction: column;
  align-items: flex-end;
-  height: unset;
+  height: auto;
   gap: 20px;
   
 }
@@ -426,13 +426,14 @@ button:active{
 }
 .con-image3{
   width: 100%;
-  height: unset;
+  height: auto;
   display: flex;
   flex-direction: row;
-  margin-top: -3rem;
+  margin-top: 0;
   margin-right: -2rem;
   align-items: start;
   justify-content: flex-end;
+  
 }
 
 .con-img {

@@ -6,7 +6,7 @@ button, input {
   height: 100vh;
   width: 100%;
  
-  background:url('./../../assets/adminlogin/loginback.png') ;
+  background:url('./../../assets/adminlogin/loginback.png')100% 100% ;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -207,4 +207,36 @@ margin: 0;
 }
 .disabled {
   opacity: 0.5;
+}
+@media (max-width: 768px){
+  .aloginmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    
+  }
+  .aloginmain > h1 {
+    font-size: 47px;
+  }
+  .alogintext{
+    font-size: 150%;
+    margin: 0;
+  }
+  .aloginin input {
+    width: 100%;
+    display: block;
+    margin-top: 6px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    font-size: 12px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 4px;
+  }
+  .aloginin label{
+    color: black;
+    font-size: 13px;
+  }
 }

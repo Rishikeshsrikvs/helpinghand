@@ -17,6 +17,7 @@ import Admincontact from "./Admincontact";
 import Adminvol from "./Adminvol";
 import Admindonner from "./Admindonner";
 import AdminARP from "./AdminARP";
+import Qrcode from './../../../adminpages/Qrcode.jsx';
 import { Link, useLocation } from "react-router-dom";
 import { Route, Routes } from 'react-router-dom';
 
@@ -26,48 +27,48 @@ const AdminDashboard = () => {
 
   return (
     <ProtectedRoute>
-      <div className="page-container">
-        <div className="sidebar">
-          <div className="logocontainer">
+      <div className="admin-page-container">
+        <div className="admin-sidebar">
+          <div className="admin-logocontainer">
             <img src={logo} alt="" />
           </div>
-          <ul className="lists">
-            <Link to="/admin/SHRA/dashboard" className={`icon ${location.pathname === '/admin/SHRA/dashboard' ? 'active-link' : ''}`}>
+          <ul className="admin-lists">
+            <Link to="/admin/SHRA/dashboard" className={`admin-icon ${location.pathname === '/admin/SHRA/dashboard' ? 'active-link' : ''}`}>
               <img src={dashboard} alt="" />
               <li>Dashboard</li>
             </Link>
-            <Link to="/admin/SHRA/gallery" className={`icon ${location.pathname === '/admin/SHRA/gallery' ? 'active-link' : ''}`}>
+            <Link to="/admin/SHRA/gallery" className={`admin-icon ${location.pathname === '/admin/SHRA/gallery' ? 'active-link' : ''}`}>
               <img src={gallery} alt="" />
               <li>Gallery</li>
             </Link>
-            <Link to="/admin/SHRA/events" className={`icon ${location.pathname === '/admin/SHRA/events' ? 'active-link' : ''}`}>
+            <Link to="/admin/SHRA/events" className={`admin-icon ${location.pathname === '/admin/SHRA/events' ? 'active-link' : ''}`}>
               <img src={event} alt="" />
               <li>Events</li>
             </Link>
-            <Link to="/admin/SHRA/contact" className={`icon ${location.pathname === '/admin/SHRA/contact' ? 'active-link' : ''}`}>
+            <Link to="/admin/SHRA/contact" className={`admin-icon ${location.pathname === '/admin/SHRA/contact' ? 'active-link' : ''}`}>
               <img src={contact} alt="" />
               <li>Contacts</li>
             </Link>
-            <Link to="/admin/SHRA/volunteer" className={`icon ${location.pathname === '/admin/SHRA/volunteer' ? 'active-link' : ''}`}>
+            <Link to="/admin/SHRA/volunteer" className={`admin-icon ${location.pathname === '/admin/SHRA/volunteer' ? 'active-link' : ''}`}>
               <img src={volunteer} alt="" />
               <li>Volunteer</li>
             </Link>
-            <Link to="/admin/SHRA/donors" className={`icon ${location.pathname === '/admin/SHRA/donors' ? 'active-link' : ''}`}>
+            <Link to="/admin/SHRA/donors" className={`admin-icon ${location.pathname === '/admin/SHRA/donors' ? 'active-link' : ''}`}>
               <img src={donors} alt="" />
               <li>Donors</li>
             </Link>
-            <Link to="/admin/SHRA/annual-report" className={`icon ${location.pathname === '/admin/SHRA/annual-report' ? 'active-link' : ''}`}>
+            <Link to="/admin/SHRA/annual-report" className={`admin-icon ${location.pathname === '/admin/SHRA/annual-report' ? 'active-link' : ''}`}>
               <img src={Annualreport} alt="" />
               <li>Annual report</li>
             </Link>
           </ul>
         </div>
-        <div className="topbar">
-          <div className="topbar-header">
+        <div className="admin-topbar">
+          <div className="admin-topbar-header">
             <h1>helping hands charity</h1>
           </div>
         </div>
-        <div className="topbar-content">
+        <div className="admin-topbar-content">
           <Routes>
             <Route path="/dashboard" element={<Adnotification />} />
             <Route path="/gallery" element={<Adgallery/>} />
@@ -77,6 +78,7 @@ const AdminDashboard = () => {
             <Route path="/volunteer" element={<Adminvol/>} />
             <Route path="/donors" element={<Admindonner/>} />
             <Route path="/annual-report" element={<AdminARP/>} />
+            <Route path="/qrcode" element={<Qrcode/>} />
           </Routes>
         </div>
       </div>

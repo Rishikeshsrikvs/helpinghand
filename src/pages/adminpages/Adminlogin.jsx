@@ -107,6 +107,7 @@ const Adminlogin = () => {
               <input
                 type="text"
                 value={adminEmail}
+                autocomplete="off"
                 onChange={(e) => setAdminEmail(e.target.value)}
               />
             </div>
@@ -115,6 +116,7 @@ const Adminlogin = () => {
               <input
                 type="password"
                 value={adminPassword}
+                autocomplete="off"
                 onChange={(e) => setAdminPassword(e.target.value)}
               />
             </div>
@@ -138,6 +140,7 @@ const Adminlogin = () => {
                       id={`otp-${index}`}
                       type="text"
                       value={value}
+                      autocomplete="off"
                       onChange={(e) => handleOtpChange(e, index)}
                       maxLength="1"
                     />

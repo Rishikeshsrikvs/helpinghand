@@ -47,10 +47,15 @@ const Adupcomingevents = () => {
 
   return (
     <div className="main-adupcomingevent">
-      <div className="table-container">
-        <div className="uetitle">
+       <div className="adupcomingevent-heading">
+        <h1>upcoming events</h1>
+      </div>
+      <div className="uetitle">
           <button onClick={()=>{navigate('/admin/SHRA/createevent')}}>CREATE EVENT</button>
         </div>
+      <div className="table-container">
+
+       
         <table>
           <thead>
             <tr>
@@ -66,7 +71,7 @@ const Adupcomingevents = () => {
             {events.map(event => (
               <tr key={event.id}>
                 <td className='evname'>{event.event_name}</td>
-                <td className='evdate'>{event.event_date}</td>
+                <td className='evdate'>{event.event_date.substring(0, 10)}</td>
                 <td className='evlocation'>{event.event_location}</td>
                 <td className='evDESC'>{event.event_desc}</td>
                

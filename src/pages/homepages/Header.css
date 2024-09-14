@@ -80,7 +80,7 @@
   
   .navul li a {
     font-family: 'Plus Jakarta Sans';
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
     line-height: 25.2px;
     text-align: left;
@@ -196,6 +196,12 @@
   
   
   /* Mobile styles */
+  @media (max-width: 1135px) {
+    .navul li a {
+      font-size: 16px;
+    }
+  }
+
   @media (max-width: 768px) {
     .navbar-container {
       flex-direction: column;

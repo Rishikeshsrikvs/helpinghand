@@ -112,6 +112,7 @@
     background-color: #808080;
     margin-top: 20px;
     border-radius: 4px;
+    margin-bottom: 10px;
 }
 .adgall-sub-btn:hover{
     transform: scale(1.02);
@@ -138,3 +139,54 @@
 .upload-btn input{
   display: none;
 }
+
+@media (max-width: 768px){
+  .adgall-heading {
+    font-size: 20px;
+    height: 30px;
+  color: #fff;
+  font-family: "Outfit";
+  font-weight: 600;
+}
+.adgall-btns {
+  width: 205px;
+  height: unset;
+  background: #000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 9px;
+  margin-top: 30px;
+}
+.admingallery {
+  width: 95%;
+  height: 380px;
+  background: #001f34;
+  border-radius: 11px;
+}
+.upload-btn{
+  width: 185px;
+  margin-bottom: 15px;
+  padding: 10px   ;
+  font-size: 16px;
+  color: #135CFF;
+  background: #FFFFFF;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  transition: all .3s ease;
+}
+.drive-btn{
+  width: 185px;
+  height: 46px;
+  font-size: 16px;
+  color: #135CFF;
+  background: #FFFFFF;
+  border: none;
+  outline: none;
+  font-weight: 600;
+}
+  }
+  

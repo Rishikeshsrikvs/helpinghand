@@ -14,7 +14,7 @@ const Footer = () => {
     <div className='footerparent'>
         <div className="footback">
             <div className="footiconcontainer">
-               <Link><img src={li} alt="" /></Link>
+               <Link to="https://www.linkedin.com/company/helping-hands-charitable-trust-chennai/"  target="_blank"><img src={li} alt="" /></Link>
                <Link to="https://www.instagram.com/helpinghands.charitabletrust/"  target="_blank"><img src={ins} alt="" /></Link>
                <Link to="https://www.facebook.com/profile.php?id=61554899485699"  target="_blank"><img src={face} alt="" /></Link>
                <Link><img src={twit} alt="" /></Link>

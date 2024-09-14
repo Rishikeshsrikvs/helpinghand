@@ -44,7 +44,7 @@ const Admincontact = () => {
 
   const handleCheck = (contactId) => {
    
-    
+    console.log("checked");
     api.put(`admin/contact`,
       {'contactId':contactId},
        {
@@ -90,6 +90,9 @@ const Admincontact = () => {
   return (
     <div className="Admincontact">
       <div className="admincon-container">
+      <div className="admin-con-heading">
+        <h1>contact</h1>
+      </div>
         <div className="admin-content">
 
         {contacts.map((contact,index) => (     

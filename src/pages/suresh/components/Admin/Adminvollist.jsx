@@ -27,20 +27,23 @@ const Adminvollist = () => {
     fetchvolunteers();
   }, [token]);
   return (
-    <div className="vl-table-container">
-      <h2 className="vl-table-title">VOLUNTEERS LIST</h2>
-      <table className="vl-table">
-        <thead>
-          <tr>
-            <th>NAME</th>
-            <th>CITY</th>
-            <th>AREA</th>
-            <th>EMAIL</th>
-            <th>MOBILE</th>
-          </tr>
-        </thead>
-        <tbody>
-          {volunteers.map(volunteer => (
+  
+        <div className="adminvollist">
+        <h2 className="vl-table-title">VOLUNTEERS LIST</h2>
+
+  <div className="vl-table-container">
+  <table className="vl-table">
+    <thead>
+      <tr>
+        <th className='vl-th'>NAME</th>
+        <th>CITY</th>
+        <th>AREA</th>
+        <th>EMAIL</th>
+        <th>MOBILE</th>
+      </tr>
+    </thead>
+    <tbody>
+    {volunteers.map(volunteer => (
               <tr>
               <td>{volunteer.volunteerName}</td>
               <td>{volunteer.volunteerLocation}</td>
@@ -49,10 +52,10 @@ const Adminvollist = () => {
               <td>{volunteer.volunteerContact}</td>
             </tr>
           ))}
-          
-        </tbody>
-      </table>
-    </div>
+    </tbody>
+  </table>
+</div>
+</div>
   )
 }
 

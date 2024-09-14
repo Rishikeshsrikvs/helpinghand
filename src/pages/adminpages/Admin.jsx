@@ -8,7 +8,7 @@ const Admin = () => {
     <AuthProvider>
        <Routes>
       <Route path="login" element={<Adminlogin />} />
-      <Route path="*" element={<AdminDashboard />} />
+      <Route path="/*" element={<AdminDashboard />} />
 
         </Routes>
         </AuthProvider>

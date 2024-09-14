@@ -91,7 +91,7 @@ const Admincreateevents = () => {
 
     return (
         <div className="admincreateevents">
-            <h1 className="admincreate-event-title">UPCOMING EVENTS</h1>
+            <h1 className="admincreate-event-title">CREATE EVENTS</h1>
             <div className="admincreate-event-container">
                 <form className="admincreate-event-form" onSubmit={handleSubmit}>
                     <div className="admincreate-form-row">

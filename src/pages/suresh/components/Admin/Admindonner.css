@@ -64,7 +64,7 @@
   
   /* Optional: Adjust the table width for smaller devices */
   @media screen and (max-width: 768px) {
-    th, td {
+    .ad-donner-container th,.ad-donner-container td {
       padding: 10px;
     }
   

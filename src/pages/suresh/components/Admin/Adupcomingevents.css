@@ -1,5 +1,5 @@
 .main-adupcomingevent{
-  width: 90%;
+  width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -18,8 +18,14 @@
     
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   }
+  .adupcomingevent-heading h1{
+    font-size: 27px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+  }
   .uetitle{
-    width: 90%;
+    width: 97%;
     text-align: right;
     padding: 20px 0;
   }
@@ -42,7 +48,7 @@
   
   table th, table td {
     padding: 15px;
-    text-align: left;
+    text-align: center;
     border: 1px solid #fff;
   }
   
@@ -100,3 +106,144 @@
     transform: scale(.95);
   }
   
+  @media screen and (max-width: 821px) {
+    .table-container {
+      width:100%;
+      height: 60vh;
+      margin: 0 auto;
+      border-radius: 10px;
+      overflow: scroll;
+      background-color: #0a2e47; 
+      color: white;
+      white-space: nowrap;
+      
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .main-adupcomingevent {
+      width: 100%;  /* Ensure 80% width for smaller screens */
+    }
+    th{
+      font-size: 10px;
+      width: 500px;
+    }
+    
+    
+    table td {
+      font-size: 14px;
+      background-color: #0a2e47;
+    }
+    .table-button {
+      background-color: #FFFFFF;
+      color: #000000;
+      border: none;
+      padding: 5px 6px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 7px;
+      font-weight: 600;
+      border-radius: 3px;
+      padding: 6px 18px;
+      transition: all .5s ease;
+      margin-bottom: 18px;
+    }
+    .adupcomingevent-heading h1{
+      font-size: 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+    ::-webkit-scrollbar {
+      height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  
+  }
+  ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  }
+  
+  }
+    @media (max-width: 480px) {
+      .table-container {
+        width:100%;
+        height: 60vh;
+        margin: 0 auto;
+        border-radius: 10px;
+        overflow: scroll;
+        background-color: #0a2e47; 
+        color: white;
+        white-space: nowrap;
+        
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .uetitle{
+        width: 97%;
+        text-align: center;
+        padding: 20px 0;
+      }
+      .uetitle button{
+        padding: 10px 10px;
+        background-color: black;
+        color: white;
+        font-size: 13px;
+        border-radius: 5px;
+        border: none;
+        
+      }
+      .main-adupcomingevent {
+        width: 90%; 
+        margin-top: 0; /* Ensure 80% width for smaller screens */
+      }
+      th{
+        font-size: 10px;
+        width: 500px;
+      }
+      
+      
+      table td {
+        font-size: 10px;
+        background-color: #0a2e47;
+      }
+      .table-button {
+        background-color: #FFFFFF;
+        color: #000000;
+        border: none;
+        padding: 5px 6px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 7px;
+        font-weight: 600;
+        border-radius: 3px;
+        padding: 6px 18px;
+        transition: all .5s ease;
+        margin-bottom: 18px;
+      }
+      .adupcomingevent-heading h1{
+        font-size: 17px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 0%;
+      }
+      ::-webkit-scrollbar {
+        height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+      
+    }
+    

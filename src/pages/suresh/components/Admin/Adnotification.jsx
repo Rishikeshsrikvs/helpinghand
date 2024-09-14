@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import api from "../../../../api/api";
 import "./Adnotification.css";
-
+import { useNavigate } from 'react-router-dom';
 const Adnotification = () => {
   const [contacts, setContacts] = useState(0);
   const [volunteers, setVolunteers] = useState(0);
   const [donors, setDonors] = useState(0);
-
+  const navigate = useNavigate();
   useEffect(() => {
     // Fetch contacts
     api.get("/admin/unvisitedContacts")
@@ -52,7 +52,7 @@ const Adnotification = () => {
         </div>
       </div>
       <div className="content-qr-gen">
-        <button className="qr-gen">QR CODE GENERATOR</button>
+        <button className="qr-gen" onClick={()=>{navigate('/admin/SHRA/qrcode')}}>QR CODE GENERATOR</button>
       </div>
     </div>
   );
