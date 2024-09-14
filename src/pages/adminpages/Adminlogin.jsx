@@ -5,19 +5,18 @@ import './Adminlogin.css';
 import { useAuth } from './auth/AuthContext'; // Import useAuth from AuthContext
 import api from '../../api/api'; // Assume you have a custom API instance
 import logo from './../../assets/adminlogin/loginlogo.png';
+
 const Adminlogin = () => {
   const [showOtpPopup, setShowOtpPopup] = useState(false);
-  const [adminEmail, setAdminEmail] = useState('rishikesh.srikvstech@gmail.com'); // Initialize with empty string
-  const [adminPassword, setAdminPassword] = useState('rishi27'); // Initialize with empty string
+  const [adminEmail, setAdminEmail] = useState('rishikesh.srikvstech@gmail.com');
+  const [adminPassword, setAdminPassword] = useState('rishi27');
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [errorMessage, setErrorMessage] = useState('');
   const otpPopupRef = useRef(null);
   const navigate = useNavigate();
 
-  // Access the auth context
   const { login, token } = useAuth();
 
-  // Handle login submission
   const handleLoginSubmit = async () => {
     try {
       const response = await api.post('/admin/login', {
@@ -26,8 +25,7 @@ const Adminlogin = () => {
       });
 
       if (response.status === 200) {
-        login(response.data.jwt); // Store the JWT token in the context using login function
-        console.log('Logged in with token:', response.data.jwt);
+        login(response.data.jwt);
         setShowOtpPopup(true);
         setErrorMessage('');
       }
@@ -36,12 +34,10 @@ const Adminlogin = () => {
     }
   };
 
-  // Handle OTP popup close
   const handleCloseOtpPopup = () => {
     setShowOtpPopup(false);
   };
 
-  // Handle clicking outside the OTP popup
   const handleClickOutside = (event) => {
     if (otpPopupRef.current && !otpPopupRef.current.contains(event.target)) {
       setShowOtpPopup(false);
@@ -59,55 +55,67 @@ const Adminlogin = () => {
     };
   }, [showOtpPopup]);
 
-  // Handle OTP input change
+  // Reset OTP fields after an error
+  const resetOtp = () => {
+    setOtp(['', '', '', '', '', '']);
+    document.getElementById('otp-0').focus();
+  };
+
+  // Handle OTP input change and focus management
   const handleOtpChange = (e, index) => {
     const value = e.target.value;
+
     if (/^\d*$/.test(value) && value.length <= 1) {
       const newOtp = [...otp];
       newOtp[index] = value;
       setOtp(newOtp);
 
+      // Move to the next input
       if (index < otp.length - 1 && value) {
         document.getElementById(`otp-${index + 1}`).focus();
+      }
+
+      // Handle backspace (move to the previous input)
+      if (!value && index > 0) {
+        document.getElementById(`otp-${index - 1}`).focus();
       }
     }
   };
 
-  // Handle OTP submission
   const handleOtpSubmit = async () => {
-    const otpValue = otp.join(''); // Combine the OTP values into one string
+    const otpValue = otp.join('');
 
     try {
       const response = await api.get(`/admin/verify/${otpValue}`, {
-        headers: { authorization: `${token}` }, // Use the token from AuthContext
+        headers: { authorization: `${token}` },
       });
 
       if (response.status === 200) {
-        login(response.data.jwt); // Update token after OTP verification
-        console.log('OTP verified, new token set:', response.data.jwt);
-        navigate('/admin/SHRA/dashboard'); // Redirect to dashboard on successful OTP verification
+        login(response.data.jwt);
+        navigate('/admin/SHRA/dashboard');
       } else {
         setErrorMessage('OTP verification failed. Please try again.');
+        resetOtp(); // Reset OTP on error
       }
     } catch (error) {
       setErrorMessage('An error occurred during OTP verification.');
+      resetOtp(); // Reset OTP on error
     }
   };
 
   return (
     <div className="aloginparent">
       <div className="aloginmain">
-        {/* <h1>ADMIN PAGE</h1> */}
         <div className="alogincontainer">
           <div className={`aloginsubcon ${showOtpPopup ? 'blur' : ''}`}>
-            <img className='aloginimg' src={logo} alt="" />
-            <h1 className='alogintext'>WELCOME</h1>
+            <img className="aloginimg" src={logo} alt="" />
+            <h1 className="alogintext">WELCOME</h1>
             <div className="aloginin">
               <label>Email</label>
               <input
                 type="text"
                 value={adminEmail}
-                autocomplete="off"
+                autoComplete="off"
                 onChange={(e) => setAdminEmail(e.target.value)}
               />
             </div>
@@ -116,7 +124,7 @@ const Adminlogin = () => {
               <input
                 type="password"
                 value={adminPassword}
-                autocomplete="off"
+                autoComplete="off"
                 onChange={(e) => setAdminPassword(e.target.value)}
               />
             </div>
@@ -140,7 +148,7 @@ const Adminlogin = () => {
                       id={`otp-${index}`}
                       type="text"
                       value={value}
-                      autocomplete="off"
+                      autoComplete="off"
                       onChange={(e) => handleOtpChange(e, index)}
                       maxLength="1"
                     />
