@@ -13,12 +13,12 @@
   flex-direction: column;
   justify-content: space-around;
 }
-.request-container input,#bodygroup{
+.request-container input,.request-group select{
  
   background-color: #0e0a0a;
   border: 1px solid black;
   color: #ffffff;
-  padding: 5px;
+  padding:  8px 5px ;
   border-radius: 5px;
 }
 
@@ -77,6 +77,13 @@
   color: #000000;
 
 }
+
+.buttonrr:hover {
+  background-color: rgb(136, 133, 133);
+  color: red;
+
+}
+
 
 
 @media screen and (max-width : 768px){

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import api from '../../api/api'; // Import Axios
 import './Involve.css';
 import { Link } from 'react-router-dom';
@@ -8,13 +8,12 @@ import hr3 from './../../assets/involve/image (3).png';
 import hr4 from './../../assets/involve/image (4).png';
 import hr5 from './../../assets/involve/image (5).png';
 import hr6 from './../../assets/involve/image.png';
-import { useEffect } from 'react';
+
 const Involve = () => {
-  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -33,12 +32,26 @@ const Involve = () => {
 
   const validateForm = () => {
     const newErrors = {};
+
+    // Check for required fields
     if (!formData.firstName) newErrors.firstName = 'First Name is required';
     if (!formData.lastName) newErrors.lastName = 'Last Name is required';
     if (!formData.mobile) newErrors.mobile = 'Mobile is required';
     if (!formData.email) newErrors.email = 'Email is required';
     if (!formData.location) newErrors.location = 'Location is required';
     if (!formData.area) newErrors.area = 'Area is required';
+
+    // Validate phone number (assuming 10 digits)
+    const phoneRegex = /^\d{10}$/;
+    if (formData.mobile && !phoneRegex.test(formData.mobile)) {
+      newErrors.mobile = 'Mobile number must be 10 digits';
+    }
+
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (formData.email && !emailRegex.test(formData.email)) {
+      newErrors.email = 'Invalid email address';
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -47,7 +60,7 @@ const Involve = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-
+  
     // Merge firstName and lastName for API submission
     const apiData = {
       volunteerName: `${formData.firstName} ${formData.lastName}`,
@@ -56,14 +69,14 @@ const Involve = () => {
       volunteerLocation: formData.location,
       volunteerArea: formData.area
     };
-
+  
     try {
       const response = await api.post('/voluteer', apiData, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       });
-
+  
       if (response.status === 201) {
         setSuccessMessage('Registration successful!');
         setFormData({
@@ -75,6 +88,11 @@ const Involve = () => {
           area: ''
         });
         setErrors({});
+  
+        // Hide success message after 4 seconds
+        setTimeout(() => {
+          setSuccessMessage('');
+        }, 4000);
       } else {
         setSuccessMessage('Registration failed. Please try again.');
       }
@@ -82,6 +100,7 @@ const Involve = () => {
       setSuccessMessage('An error occurred. Please try again.');
     }
   };
+  
 
   return (
     <div className='involparent'>

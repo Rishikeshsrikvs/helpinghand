@@ -79,10 +79,15 @@
     text-align: center;
     color: #FFFFFF;
     background-color: black;
-    padding: 7px 40px ;
+    padding: 10px 40px ;
     margin: 0 auto;
     border: none;
+    border-radius: 8px;
 
+}
+.footbtn a:hover{
+    background-color: #FFFFFF;
+    color: black;
 }
 .footul{
     display: flex;
@@ -106,6 +111,7 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 15.12px;
+    text-transform: capitalize;
     
 
 }

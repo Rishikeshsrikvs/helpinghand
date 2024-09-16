@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  margin: 10vh auto;
 }
 
 .slider-container {
@@ -20,18 +21,37 @@
     display: flex; 
     align-items: center;
     justify-content: center; 
-    margin: 2% auto; 
+    margin: 0% auto; 
     width:100%;
-    height: 60%;
+    height: 100%;
+    
   }
   
   .image-slide {
-    display: flex; 
-    gap: 30px; 
+    /* display:flex ; 
+    gap: 30px;  */
 
-   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2%;
+    width: 90%;
+    margin: 0 auto;
+    height: 80%;
   }
- 
+
+  .image-slide{
+   
+
+  }
+  .grv1{
+    transform: translateY(0%);
+  }
+  .grv2{
+    transform: translateY(30%);
+  }
+  .grv3{
+    transform: translateY(60%);
+  }
 .volunter{
     text-align: center;
     margin-bottom: 40%;
@@ -39,7 +59,7 @@
 
   .image-slide img {
     width: 100%; 
-    height: 210px; 
+    height: 240px; 
     display: flex;
     justify-items: center;
     border-radius: 8px; 
@@ -67,14 +87,16 @@
     width: 15%;
     font-style: initial;
     font-size: 30px;
-    padding: 25px 20px;
+    padding: 15px 20px;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .vallalarbtn:hover {
-    background-color: #003366; 
+    background-color: #094c8f; 
+    transition: all 0.5s ease-out;
+    transform: scale(1.2 );
   }
   
 
@@ -83,27 +105,40 @@
 .imgback{
   background-size: 100%;
   background-position: center;
-  height: unset;
-  
+  height: 100vh;
+  padding: 3vh auto;
   background-repeat: repeat;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+}   .slider-container{
+  width: 100%;
+  border: 2px solid red;
+  height: 100%;
 }
     .image-slide{
+      display: flex;
+      width: 100%;
+      border: 2px solid red;
       flex-direction: column;
       align-items: center;
+      height: 100%;
     }
     .image-slide img {
-      width: 80%; 
-      height: 170px; 
+      width: 100%; 
+      height: 130px; 
       display: flex;
       justify-items: center;
       border-radius: 8px; 
       margin-bottom: 10px;
       transition: transform 0.3s ease-in-out; 
+    }
+    .vallalarbtn{
+      width: 60%;
+      font-size: 20px;
+    padding: 10px 20px;
     }
 
   }

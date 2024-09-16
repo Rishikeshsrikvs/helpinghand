@@ -34,12 +34,12 @@
 }
 .education-right{
     width: 28%;
-    height: 100vh;
+    height: auto;
 }
 
 .edu-image-container{
     width: 100%;
-    height: 65vh;
+    height: 45vh;
     position: relative;
 }
 .edu-image1{

@@ -31,7 +31,7 @@ export const Header = () => {
     // Simulate loading effect with timeout
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000); // Adjust timing to match your logo animation duration
+    }, 4000); // Adjust timing to match your logo animation duration
     return () => clearTimeout(timer);
   }, []);
 

@@ -53,7 +53,7 @@ const Requestform = ({ onBloodGroupSubmit }) => {
       });
 
       if (response.status === 201) {
-        setSubmissionStatus('Request submitted successfully!');
+        setSubmissionStatus('List Of Donors submitted successfully!');
         setFormData({
           name: '',
           hospitalname: '',
