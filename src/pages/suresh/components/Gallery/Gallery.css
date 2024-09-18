@@ -58,6 +58,9 @@
     line-height: 37px;
     font-family: "Plus Jakarta Sans";
   }
+  .gall-text .gall-btn:hover{
+    background-color: blue;
+  }
   
   @media screen and (max-width: 1024px) {
     .gallery-container {

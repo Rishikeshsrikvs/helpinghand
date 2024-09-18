@@ -94,9 +94,9 @@
   }
   
   .vallalarbtn:hover {
-    background-color: #094c8f; 
-    transition: all 0.5s ease-out;
-    transform: scale(1.2 );
+    background-color: blue; 
+    transition: all 0.1s ease;
+  
   }
   
 
@@ -105,7 +105,7 @@
 .imgback{
   background-size: 100%;
   background-position: center;
-  height: 100vh;
+  height: 70vh;
   padding: 3vh auto;
   background-repeat: repeat;
   width: 100vw;
@@ -115,13 +115,13 @@
   position: relative;
 }   .slider-container{
   width: 100%;
-  border: 2px solid red;
+ 
   height: 100%;
 }
     .image-slide{
       display: flex;
       width: 100%;
-      border: 2px solid red;
+    
       flex-direction: column;
       align-items: center;
       height: 100%;

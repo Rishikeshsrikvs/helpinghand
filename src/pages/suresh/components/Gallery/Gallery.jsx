@@ -8,7 +8,9 @@ const Gallery = () => {
   const navigate= useNavigate();
   const [images, setImages] = useState([]);
   const apiBaseUrl = "https://helpinghands-8tdm.onrender.com"; // Your base URL
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     // Fetch images from the API
     const fetchImages = async () => {

@@ -24,6 +24,12 @@
    align-items: center;
    height: 90%;
 }
+.footiconcontainer img{
+    transition: all .2s ease;
+}
+.footiconcontainer img:hover{
+    transform: scale(1.2);
+}
 .footsubparent{
     width: 90%;
     height:100%;
@@ -114,6 +120,9 @@
     text-transform: capitalize;
     
 
+}
+.fsubleft a span{
+    color: rgb(245, 133, 6);
 }
 @media (max-width: 768px){
 

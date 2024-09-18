@@ -71,13 +71,15 @@ const Land = () => {
         </div>
         <div className="land4card">
             <img src={l42} alt="" />
-            <h1>600+</h1>
-            <h2>Volunters Engaged</h2>
+            <h1>12+</h1>
+            <h2>
+            Years of Voluntary Service</h2>
         </div>
         <div className="land4card">
             <img src={l43} alt="" />
-            <h1>600+</h1>
-            <h2>Volunters Engaged</h2>
+            <h1>1000+</h1>
+            <h2>
+            we impacted people life</h2>
         </div>
     </div>
     <div className="land5main">

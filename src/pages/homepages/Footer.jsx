@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
           <div className='footsub'>
                 <div className="fsubleft">
-                    <Link to= "https://srikvstech.com/">designed by sri KVS Tech</Link>
+                    <Link to= "https://srikvstech.com/">designed by <span>SRI KVS TECH</span></Link>
                 </div>
                 <div className="fsubright">
                     <Link>privacy policy</Link>
