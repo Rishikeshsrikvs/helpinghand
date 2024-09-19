@@ -73,7 +73,7 @@
   .navul {
     display: flex;
     gap: 1%;
-    width: 75%;
+    width: 77%;
     justify-content: space-between;
     transition: transform 0.3s ease;
   }
@@ -92,22 +92,24 @@
   }
   
   .navcar {
-    width: 20%;
+    width: 13%;
+   
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
   }
   
   .navcar a {
     display: block;
     font-size: 18px;
-    font-weight: 400;
-    padding: 10px 1%;
-    width: 135px;
+    font-weight: 700;
+    padding: 20px 30px;
+   font-size: 25px;
     text-align: center;
-    border-radius: 9px;
+    border-radius: 5px;
     white-space: nowrap;
-    color: black;
-    background: #ffffff;
+    color:white;
+    background: #ee2170;
+    text-transform: uppercase;
   }
   
   .navcar a:hover {
@@ -115,6 +117,9 @@
     color: white;
   }
   
+  .navcar a.active-link{
+    background-color: #ff7f50;
+  }
   /* Hidden state for the navbar */
   .navbar-container.hidden {
     top: -200px;

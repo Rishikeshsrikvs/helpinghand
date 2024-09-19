@@ -144,7 +144,7 @@ const Donate = () => {
             to basic needs, such as shelter, healthcare, and nutrition, leading
             them towards a life of dignity and hope for a brighter future.
           </p>
-          <button className="donate-btn" onClick={() => handlePay(25000, 'ONCE')} disabled={!razorpayKey}>Donate Now</button>
+          {/* <button className="donate-btn" onClick={() => handlePay(25000, 'ONCE')} disabled={!razorpayKey}>Donate Now</button> */}
           {errorMessage && <div className="error-message">{errorMessage}</div>}
         </div>
         <div className="cardgrid">

@@ -17,7 +17,7 @@
     flex-wrap: wrap;
 }
 .program-left h1{
-    font-size: 32px;
+    font-size: 42px;
     text-transform: capitalize;
     margin-bottom: 2rem;
     font-style: italic;
@@ -25,7 +25,7 @@
     line-height: 51px;
 }
 .program-left p{
-    font-size: 15px;
+    font-size: 25px;
     text-transform: capitalize;
     margin-bottom: 2rem;
     line-height: 30px;

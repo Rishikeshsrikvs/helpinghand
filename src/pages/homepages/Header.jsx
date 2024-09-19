@@ -58,9 +58,11 @@ export const Header = () => {
           <li><NavLink to="media" className={({ isActive }) => (isActive ? 'active-link' : '')}>Media</NavLink></li>
           <li><NavLink to="blooddonate" className={({ isActive }) => (isActive ? 'active-link' : '')}>Blood Donation</NavLink></li>
           <li><NavLink to="getinvolved" className={({ isActive }) => (isActive ? 'active-link' : '')}>Get Involved</NavLink></li>
+          <li><NavLink to="Connect" className={({ isActive }) => (isActive ? 'active-link' : '')}>Contact Us</NavLink></li>
         </ul>
         <div className='navcar'>
-          <li><NavLink to="Connect" className={({ isActive }) => (isActive ? 'active-link' : '')}>Contact Us</NavLink></li>
+          <li><NavLink to="Donate" className={({ isActive }) => (isActive ? 'active-link' : '')}>Donate Us</NavLink></li>
+         
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@
 .imgback{
   background-size: 100%;
   background-position: center;
-  height: 80vh;
+  height: 50vh;
   
   background-repeat: no-repeat;
   width: 100vw;
@@ -43,7 +43,7 @@
    
 
   }
-  .grv1{
+  /* .grv1{
     transform: translateY(0%);
   }
   .grv2{
@@ -51,7 +51,7 @@
   }
   .grv3{
     transform: translateY(60%);
-  }
+  } */
 .volunter{
     text-align: center;
     margin-bottom: 40%;
