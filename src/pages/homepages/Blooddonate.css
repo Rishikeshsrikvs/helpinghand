@@ -42,12 +42,14 @@
   }
   .image-row {
     margin: 10vh auto;
+    
   }
   .image-row img {
     max-width: 30%;
     height: 400px;
     object-fit: cover;
     flex: 1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
 

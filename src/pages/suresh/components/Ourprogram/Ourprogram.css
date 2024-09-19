@@ -26,7 +26,7 @@
 }
 .program-left p{
     font-size: 25px;
-    text-transform: capitalize;
+    word-spacing: 8px;
     margin-bottom: 2rem;
     line-height: 30px;
     font-weight: 400;
@@ -40,6 +40,11 @@
    background: #0699ff;
    font-size: 20px;
    font-weight: 600;
+   border-radius: 4px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.program-left .join-btn:hover{
+    background-color: black;
 }
 .program-left h1 span{
     color: #008b4a;
@@ -74,7 +79,7 @@
     align-items: center;
     justify-content: space-around;
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-bottom: 10rem;
 }
 .container-btns{
@@ -87,6 +92,7 @@
     font-style: italic;
     transition: all .3s ease;
     color: #fff;
+   
 }
 .container-btns:hover{
     background: none;
@@ -132,10 +138,12 @@
    color: #fff;
    border: none;
    outline: none;
-   background: #0699ff;
+   background-color: #0699ff;
    border-radius: 5px;
 }
-
+.passionate .pass-con .pass-btn:hover{
+    background-color: black;
+}
 .act-donate{
     background: #fff;
     color: #000;

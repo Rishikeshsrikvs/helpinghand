@@ -8,7 +8,7 @@ import hr3 from './../../assets/involve/image (3).png';
 import hr4 from './../../assets/involve/image (4).png';
 import hr5 from './../../assets/involve/image (5).png';
 import hr6 from './../../assets/involve/image.png';
-
+import Membercard from './Membercard';
 const Involve = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -22,7 +22,7 @@ const Involve = () => {
     location: '',
     area: ''
   });
-
+  const [voldata, setVoldata] = useState({});
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -76,9 +76,15 @@ const Involve = () => {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       });
-  
+     
+      
       if (response.status === 201) {
         setSuccessMessage('Registration successful!');
+         console.log(response.data);
+         setVoldata(response.data.volunteerdet)
+        console.log("response");
+        
+        
         setFormData({
           firstName: '',
           lastName: '',
@@ -173,6 +179,7 @@ const Involve = () => {
           {successMessage && <p className="success-message">{successMessage}</p>}
         </form>
       </div>
+      <Membercard  voldata={voldata} />
     </div>
   );
 };

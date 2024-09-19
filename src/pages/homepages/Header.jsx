@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css';
 import logo from './../../assets/head/logo.png';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -65,6 +65,9 @@ export const Header = () => {
          
         </div>
       </div>
+      
+        <a href ="#upcomingevent">UPCOMMING EVENTS</a>
+      
     </div>
   );
 };

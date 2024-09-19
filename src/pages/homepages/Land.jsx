@@ -35,13 +35,28 @@ const Land = () => {
     window.scrollTo(0, 0);
   }, []);
     const navigate=useNavigate();
+
+    useEffect(() => {
+        // Check if we need to scroll to the Upcoming Events section
+        if (location.state?.scrollToEvent) {
+          const eventSection = document.getElementById('upcomingevent');
+          if (eventSection) {
+            eventSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }, [location]);
+
+
+
+
+
   return (
     <div className='landparent'>
     <Landimageslider/>
     <Grandvolunteer/>
-    <Landevent/>
+    <Landevent  />
     
-    <div className="land3main">
+    <div className="land3main"  >
         
         <h1>“help is different from ‘timely help’ sending some many to an orphanage every month is a help, but spontaneously helping during a critical time without expecting any reward is timely help”</h1>
     </div>

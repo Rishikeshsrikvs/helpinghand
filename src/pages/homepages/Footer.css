@@ -26,6 +26,7 @@
 }
 .footiconcontainer img{
     transition: all .2s ease;
+    
 }
 .footiconcontainer img:hover{
     transform: scale(1.2);
