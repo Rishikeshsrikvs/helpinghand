@@ -150,7 +150,9 @@ color: black;
     height: 30px;
     width: 100;
 }
-
+#membercard{
+    
+}
 @media (max-width: 768px){
     .iherosub h1{
         font-family: Plus Jakarta Sans;

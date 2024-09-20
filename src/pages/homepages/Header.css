@@ -101,25 +101,25 @@
   
   .navcar a {
     display: block;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
-    padding: 20px 30px;
+    padding: 15px 25px;
    font-size: 25px;
     text-align: center;
     border-radius: 5px;
     white-space: nowrap;
     color:white;
-    background: #ee2170;
+    background: black;
     text-transform: uppercase;
   }
   
   .navcar a:hover {
-    background-color: blue;
-    color: white;
+    background-color:white;
+    color: black;
   }
   
   .navcar a.active-link{
-    background-color: #ff7f50;
+    background-color: blue;
   }
   /* Hidden state for the navbar */
   .navbar-container.hidden {
@@ -174,7 +174,7 @@
     background-color: black;
     color: white;
     border-radius: 6px   ;
-
+    font-weight: 600;
     position: absolute;
     left: 50%;
    bottom: 0;

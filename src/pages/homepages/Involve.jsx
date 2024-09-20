@@ -9,7 +9,7 @@ import hr4 from './../../assets/involve/image (4).png';
 import hr5 from './../../assets/involve/image (5).png';
 import hr6 from './../../assets/involve/image.png';
 import Membercard from './Membercard';
-import html2pdf from 'html2pdf.js';
+import html2canvas from 'html2canvas';
 
 const Involve = () => {
   useEffect(() => {
@@ -78,7 +78,7 @@ const Involve = () => {
       if (response.status === 201) {
         setSuccessMessage('Registration successful!');
         setVoldata(response.data.volunteerdet);
-        
+
         setFormData({
           firstName: '',
           lastName: '',
@@ -89,10 +89,9 @@ const Involve = () => {
         });
 
         setErrors({});
-     
+
         setTimeout(() => {
           setSuccessMessage('');
-
         }, 4000);
       } else {
         setSuccessMessage('Registration failed. Please try again.');
@@ -104,24 +103,19 @@ const Involve = () => {
 
   useEffect(() => {
     if (Object.keys(voldata).length > 0) {
-      handleDownloadPDF();  // Call the download function here
+      handleDownloadImage(); // Call the download function here
     }
-  }, [voldata]); 
+  }, [voldata]);
 
-const handleDownloadPDF = () => {
-  const element = document.getElementById('membercard');
-
-  const opt = {
-    margin: [0, 0, 0, 0], // Remove margins for full width
-    filename: `${voldata.volunteerName}_membership_card.pdf`,
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, width: 1080 }, // Ensures the canvas captures full width
-    jsPDF: { unit: 'px', format: [1080, 600], orientation: 'landscape' } // Custom width and reduced height
+  const handleDownloadImage = () => {
+    const element = document.getElementById('membercard');
+    html2canvas(element, { scale: 2 }).then((canvas) => {
+      const link = document.createElement('a');
+      link.href = canvas.toDataURL('image/jpeg');
+      link.download = `${voldata.volunteerName}_membership_card.jpg`; // Can also change 'jpeg' to 'png'
+      link.click();
+    });
   };
-
-  html2pdf().set(opt).from(element).save();
-};
-
 
   return (
     <div className='involparent'>
@@ -197,16 +191,10 @@ const handleDownloadPDF = () => {
         </form>
       </div>
 
-      {/* Member Card Section */}
-      <div id="membercard">
-        <Membercard voldata={voldata} />
+      {/* Hidden Member Card Section */}
+      <div style={{ position: 'absolute', left: '-9999px' }}  >
+        <Membercard voldata={voldata}  />
       </div>
-
-      {/* {Object.keys(voldata).length > 0 && (
-        <button onClick={handleDownloadPDF} className="download-pdf-btn">
-          Download Membership Card
-        </button>
-      )} */}
     </div>
   );
 };
