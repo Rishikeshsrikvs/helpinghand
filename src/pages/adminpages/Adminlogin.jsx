@@ -8,8 +8,8 @@ import logo from './../../assets/adminlogin/loginlogo.png';
 
 const Adminlogin = () => {
   const [showOtpPopup, setShowOtpPopup] = useState(false);
-  const [adminEmail, setAdminEmail] = useState('rishikesh.srikvstech@gmail.com');
-  const [adminPassword, setAdminPassword] = useState('rishi27');
+  const [adminEmail, setAdminEmail] = useState('');
+  const [adminPassword, setAdminPassword] = useState('');
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [errorMessage, setErrorMessage] = useState('');
   const otpPopupRef = useRef(null);

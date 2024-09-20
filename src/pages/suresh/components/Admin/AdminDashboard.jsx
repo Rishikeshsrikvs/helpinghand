@@ -66,6 +66,7 @@ const AdminDashboard = () => {
         <div className="admin-topbar">
           <div className="admin-topbar-header">
             <h1>helping hands charity</h1>
+            <button>LOG OUT</button>
           </div>
         </div>
         <div className="admin-topbar-content">

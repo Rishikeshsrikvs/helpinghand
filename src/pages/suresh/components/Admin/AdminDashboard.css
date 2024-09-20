@@ -1,122 +1,6 @@
-/* 
-  .page-container{
-    width: 100vw;
-    height: auto;
-    display: flex;
-    overflow: hidden;
-    
-  }
-
-  .sidebar{
-
-    position: fixed;
-  top: 0;
-  left: 0;
-  width: 10%;
-  height: 100vh;
-  background: #001F34;
-  color: white;
-  padding: 10px;
-  box-sizing: border-box;
-  }
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  .logocontainer{
-    width: 102px;
-    height: 102px;
-  }
-  .logocontainer img{
-    width: 100%;
-  }
-  .lists{
-    margin: 20px 0;
-    width: 90%;
-    height: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    flex-direction: column;
-  }
-
-  .icon{
-    width: 107px;
-    height: 62px;
-    text-align: center;
-    transition: all .3s ease;
-  }
-  .icon:hover{
-    transform: scale(1.15);
-  }
-  .icon:active{
-    transform: scale(.9);
-  }
-  .icon img {
-    width: 30px;
-  }
-  .icon li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-   list-style: none;
-   color: #fff;
-   font-size: 15px;
-   font-weight: 600;
-  }
-   /*
-.topbar{
-    
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    position: sticky;
-    z-index: 999; */
-    position: fixed;
-    top: 0;
-    left: 10%;
-    width: 100%;
-    color: white;
-    z-index: 1000;
-}
-  
-/* .topbar-header{
-    width: 100%;
-    height: 15vh;
-    display: flex;
-    align-items: center;
-    padding-top: 15px;
-    padding-left: 20px;
-    background: #001F34;
-}
-.topbar-header h1{
-    font-size: 32px;
-    font-weight: 700;
-    color: #fff;
-    text-transform: uppercase;
-    font-family: "Plus Jakarta Sans";
-}
-.topbar-content{
-  margin-left: 139px;
-  margin-top: 50px;
-  padding: 20px;
-
-  width: calc(100% - 200px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 10vh;
-  min-height: 80vh;
-  
-  
- 
-} */
 
 .admin-lists{
-  border: 3px solid red;
+
 }
 .admin-lists .admin-icon {
   display: flex;
@@ -156,7 +40,7 @@
 top: 0;
 left: 0;
 width: 13%;
-height: 100vh;
+height: auto;
 background: #001F34;
 color: white;
 padding: 10px;
@@ -164,7 +48,7 @@ box-sizing: border-box;
 display: flex;
 flex-direction: column;
 align-items: center;
-gap: 40px;
+gap: 0px;
 }
 a {
   color: white;
@@ -173,7 +57,7 @@ a {
 .admin-logocontainer{
   width: 102px;
   height: 102px;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 .admin-logocontainer img{
   width: 100%;
@@ -185,7 +69,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 10px;
   flex-direction: column;
 }
 
@@ -224,13 +108,15 @@ a {
 }
 
 .admin-topbar-header{
-  width: 100%;
+  width: 90%;
+  padding:  0 3%;
   height: 15vh;
   display: flex;
   align-items: center;
   padding-top: 15px;
   padding-left: 40px;
   background: #001F34;
+  justify-content: space-between;
 }
 .admin-topbar-header h1{
   font-size: 32px;
@@ -240,6 +126,21 @@ a {
   text-transform: uppercase;
   font-family: "Plus Jakarta Sans";
 }
+.admin-topbar-header button{
+  border: none;
+  background-color: white;
+  color: black;
+  padding: 5px 20px;
+  font-weight: 600;
+  border-radius: 3px;
+  font-size: 15px;
+
+}
+.admin-topbar-header button:hover{
+  background-color: blue;
+  color: white;
+}
+
 .admin-topbar-content{
 margin-left: 13%;
 margin-top: 90px;
