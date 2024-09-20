@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css';
 import logo from './../../assets/head/logo.png';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 export const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true); // State to manage loading overlay
-
+  
+  const navigate = useNavigate();
   let lastScrollTop = 0;
 
   const handleScroll = () => {
@@ -39,6 +40,10 @@ export const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const goToUpcomingEvents = () => {
+    navigate('/', { state: { scrollToEvent: true } });
+  };
+
   return (
     <div className={`navbar-container ${isVisible ? 'visible' : 'hidden'}`}>
       {isLoading && <div className="overlay"></div>} {/* Loading overlay */}
@@ -64,10 +69,11 @@ export const Header = () => {
           <li><NavLink to="Donate" className={({ isActive }) => (isActive ? 'active-link' : '')}>Donate Us</NavLink></li>
          
         </div>
-      </div>
       
-        <a href ="#upcomingevent">UPCOMMING EVENTS</a>
+        </div>
+        <a  className='upcm' onClick={goToUpcomingEvents}>UPCOMMING EVENTS</a>
       
-    </div>
+        </div>
+  
   );
 };

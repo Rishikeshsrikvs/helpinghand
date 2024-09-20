@@ -1,9 +1,8 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './Home.css';
-import Footer from './Footer'
-import { Header } from './Header'
-import { Routes, Route } from 'react-router-dom';
+import Footer from './Footer';
+import { Header } from './Header';
+import { Routes, Route, Navigate } from 'react-router-dom'; // Import Navigate for redirection
 import AboutUs from './../suresh/components/Aboutpage/AboutUs.jsx';
 import Land from './Land';
 import Contact from '../suresh/components/Contact/Contact.jsx';
@@ -13,44 +12,37 @@ import Donate from './../suresh/components/Donate/Donate.jsx';
 import Donatenow from './../suresh/components/DonateNow/DonateNow.jsx';
 import Involve from './Involve.jsx';
 import Blooddonate from './Blooddonate.jsx';
-import logo from './../../assets/head/logo.png';
-const Home = () => {
 
+const Home = () => {
   const [isImageVisible, setIsImageVisible] = useState(true);
   const closeImageOverlay = () => {
-      setIsImageVisible(false);}
-
+    setIsImageVisible(false);
+  };
 
   return (
     <div>
-      <Header/>
-      {/* {isImageVisible && (
-        <div className="popupimage-overlay" onClick={closeImageOverlay}>
-          <div className="popupimage-container" onClick={(e) => e.stopPropagation()}>
-            <button className="popupcloseimage-button" onClick={closeImageOverlay}>X</button>
-            <img src={logo} alt="Sample" />
-          </div>
-        </div>
-      )} */}
-
+      <Header />
       
       <div className="homemain">
         <Routes>
-        
-              <Route path="/" element={<Land />} />
-              <Route path="/about" element={<AboutUs />} />
-              <Route path="/media" element={<Gallery />} />
-              <Route path="/connect" element={<Contact/>} />
-              <Route path="/ourprogram" element={<Ourprogrms />} />
-              <Route path="/donate" element={<Donate />} />
-              <Route path="/donatenow" element={<Donatenow />} />
-              <Route path="/getinvolved" element={<Involve />} />
-              <Route path="/blooddonate" element={<Blooddonate />} />
+          {/* Default route for the landing page */}
+          <Route path="/" element={<Land />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/media" element={<Gallery />} />
+          <Route path="/connect" element={<Contact />} />
+          <Route path="/ourprogram" element={<Ourprogrms />} />
+          <Route path="/donate" element={<Donate />} />
+          <Route path="/donatenow" element={<Donatenow />} />
+          <Route path="/getinvolved" element={<Involve />} />
+          <Route path="/blooddonate" element={<Blooddonate />} />
+          
+          {/* Catch-all route that redirects to Land component */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
-      <Footer/>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

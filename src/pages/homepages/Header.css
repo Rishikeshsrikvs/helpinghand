@@ -74,6 +74,7 @@
     display: flex;
     gap: 1%;
     width: 77%;
+    margin-top: -30px;
     justify-content: space-between;
     transition: transform 0.3s ease;
   }
@@ -167,17 +168,21 @@
   
 
 
-   .upeventcon{
+   .upcm{
     position: absolute;
     padding: 10px 30px;
     background-color: black;
     color: white;
-    border-radius: 3px   ;
+    border-radius: 6px   ;
 
     position: absolute;
     left: 50%;
    bottom: 0;
     transform: translate(-50%, -50%);
+  }
+  .upcm:hover{
+    background-color: white;
+    color: black;
   }
   @keyframes logoSpin {
  
@@ -217,9 +222,9 @@
   
   
   /* Mobile styles */
-  @media (max-width: 1135px) {
+  @media (max-width: 1400px) {
     .navul li a {
-      font-size: 16px;
+      font-size: 12px;
     }
   }
 
@@ -229,7 +234,7 @@
       padding: 0;
       height: unset;
       padding-top: 20px;
-      min-height: 70px;
+      min-height: 79px;
     }
   
     .navbar-logo {
@@ -238,8 +243,8 @@
     }
   
     .navbar-logo img {
-      width: 54px;
-      height: 54px;
+      width: 64px;
+      height: 64px;
     }
   
     .navcontainer {
@@ -249,7 +254,7 @@
       align-items: center;
       overflow: hidden;
       transition: height 0.3s ease, opacity 0.3s ease;
-      max-height: 0;
+      
       opacity: 0;
       padding-bottom: 10px;
 
@@ -273,7 +278,7 @@
     }
   
     .navcar a {
-      margin: 1rem auto;
+      /* margin: 1rem auto;
       display: block;
       font-family: 'Outfit';
       font-size: 15px;
@@ -284,7 +289,10 @@
       border-radius: 9px;
       white-space: nowrap;
       color: black;
-      background: #ffffff;
+      background: #ffffff; */
+      padding: 5px ;
+      font-size: 13px;
+      margin: 5px auto;
     }
   
     .navul li {
@@ -315,5 +323,8 @@
       100% {
         transform: translate(0%, 0%) scale(1) rotate(360deg) /* Final state: scaled up and rotated 360 degrees */
       }
+  }
+  .upcm{
+    display: none;
   }
 }

@@ -37,7 +37,11 @@ const Membercard = ({ voldata }) => {
                 <div className="mmrow">
                     <label htmlFor="">Joining Date</label>
                     <span>:</span>
-                    <p  className='mmsubp'>{voldata.date}</p>
+                    <p  className='mmsubp'> {new Date(voldata.date).toLocaleDateString('en-GB', {
+                            day: '2-digit',
+                            month: '2-digit',
+                            year: 'numeric',
+                        })}</p>
                 </div>
             </div>
         </div>

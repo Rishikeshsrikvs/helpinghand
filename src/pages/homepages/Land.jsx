@@ -19,7 +19,7 @@ import l41 from './../../assets/Land/Group 1000010845.png';
 import l42 from './../../assets/Land/Group 1000010844.png';
 import l43 from './../../assets/Land/Group 1000010843.png';
 
-import { useNavigate } from 'react-router-dom';
+import {useLocation, useNavigate } from 'react-router-dom';
 
 import l10dn1 from './../../assets/Land/l10dn1.png';
 import l10dn2 from './../../assets/Land/l10dn2.png';
@@ -30,24 +30,22 @@ import Landevent from './home components/Landevent';
 import Landimageslider from './home components/Landimageslider';
 import Grandvolunteer from './home components/Grandvolunteer.jsx';
 const Land = () => {
-    
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-    const navigate=useNavigate();
+    const location = useLocation(); // Access location object
 
     useEffect(() => {
-        // Check if we need to scroll to the Upcoming Events section
-        if (location.state?.scrollToEvent) {
-          const eventSection = document.getElementById('upcomingevent');
-          if (eventSection) {
-            eventSection.scrollIntoView({ behavior: 'smooth' });
-          }
+      window.scrollTo(0, 0);
+  
+      // Check if we need to scroll to the Upcoming Events section
+      if (location.state?.scrollToEvent) {
+        const eventSection = document.getElementById('upcomingevent');
+        if (eventSection) {
+          eventSection.scrollIntoView({ behavior: 'smooth' });
         }
-      }, [location]);
-
-
-
+      }
+    }, [location]);
+  
+    const navigate = useNavigate();
+  
 
 
   return (

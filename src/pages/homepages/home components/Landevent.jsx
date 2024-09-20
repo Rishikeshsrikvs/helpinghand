@@ -36,7 +36,7 @@ const Landevent = () => {
   };
 
   return (
-    <div className='landeventparent'>
+    <div className='landeventparent' id="upcomingevent">
       <h1>Upcoming Events</h1>
       <div className="lecon">
         {events.length > 0 ? (

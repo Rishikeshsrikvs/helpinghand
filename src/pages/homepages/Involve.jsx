@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../../api/api'; // Import Axios
+import api from '../../api/api';
 import './Involve.css';
 import { Link } from 'react-router-dom';
 import hr1 from './../../assets/involve/image (1).png';
@@ -9,6 +9,8 @@ import hr4 from './../../assets/involve/image (4).png';
 import hr5 from './../../assets/involve/image (5).png';
 import hr6 from './../../assets/involve/image.png';
 import Membercard from './Membercard';
+import html2pdf from 'html2pdf.js';
+
 const Involve = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,7 +35,6 @@ const Involve = () => {
   const validateForm = () => {
     const newErrors = {};
 
-    // Check for required fields
     if (!formData.firstName) newErrors.firstName = 'First Name is required';
     if (!formData.lastName) newErrors.lastName = 'Last Name is required';
     if (!formData.mobile) newErrors.mobile = 'Mobile is required';
@@ -41,13 +42,11 @@ const Involve = () => {
     if (!formData.location) newErrors.location = 'Location is required';
     if (!formData.area) newErrors.area = 'Area is required';
 
-    // Validate phone number (assuming 10 digits)
     const phoneRegex = /^\d{10}$/;
     if (formData.mobile && !phoneRegex.test(formData.mobile)) {
       newErrors.mobile = 'Mobile number must be 10 digits';
     }
 
-    // Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (formData.email && !emailRegex.test(formData.email)) {
       newErrors.email = 'Invalid email address';
@@ -60,8 +59,7 @@ const Involve = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-  
-    // Merge firstName and lastName for API submission
+
     const apiData = {
       volunteerName: `${formData.firstName} ${formData.lastName}`,
       volunteerContact: formData.mobile,
@@ -69,21 +67,17 @@ const Involve = () => {
       volunteerLocation: formData.location,
       volunteerArea: formData.area
     };
-  
+
     try {
       const response = await api.post('/voluteer', apiData, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       });
-     
-      
+
       if (response.status === 201) {
         setSuccessMessage('Registration successful!');
-         console.log(response.data);
-         setVoldata(response.data.volunteerdet)
-        console.log("response");
-        
+        setVoldata(response.data.volunteerdet);
         
         setFormData({
           firstName: '',
@@ -93,11 +87,12 @@ const Involve = () => {
           location: '',
           area: ''
         });
+
         setErrors({});
-  
-        // Hide success message after 4 seconds
+     
         setTimeout(() => {
           setSuccessMessage('');
+
         }, 4000);
       } else {
         setSuccessMessage('Registration failed. Please try again.');
@@ -106,7 +101,27 @@ const Involve = () => {
       setSuccessMessage('An error occurred. Please try again.');
     }
   };
-  
+
+  useEffect(() => {
+    if (Object.keys(voldata).length > 0) {
+      handleDownloadPDF();  // Call the download function here
+    }
+  }, [voldata]); 
+
+const handleDownloadPDF = () => {
+  const element = document.getElementById('membercard');
+
+  const opt = {
+    margin: [0, 0, 0, 0], // Remove margins for full width
+    filename: `${voldata.volunteerName}_membership_card.pdf`,
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, width: 1080 }, // Ensures the canvas captures full width
+    jsPDF: { unit: 'px', format: [1080, 600], orientation: 'landscape' } // Custom width and reduced height
+  };
+
+  html2pdf().set(opt).from(element).save();
+};
+
 
   return (
     <div className='involparent'>
@@ -128,12 +143,14 @@ const Involve = () => {
           <h1>Make Your Weekends More <br /> <span>Meaningful</span></h1>
         </div>
       </div>
+
       <div className="intitle">
-        <h1>Why Volunteer With us</h1>
-        <p>We provide a variety of volunteer options to suit your preferences. You'll join a group of people that are dedicated to changing things for the better.</p>
+        <h1>Why Volunteer With Us</h1>
       </div>
+
       <div className="informmain">
         <form onSubmit={handleSubmit} className="inform">
+          {/* Form Fields */}
           <h1>Registration</h1>
           <div className="invcon">
             <div className="invsub">
@@ -179,7 +196,17 @@ const Involve = () => {
           {successMessage && <p className="success-message">{successMessage}</p>}
         </form>
       </div>
-      <Membercard  voldata={voldata} />
+
+      {/* Member Card Section */}
+      <div id="membercard">
+        <Membercard voldata={voldata} />
+      </div>
+
+      {/* {Object.keys(voldata).length > 0 && (
+        <button onClick={handleDownloadPDF} className="download-pdf-btn">
+          Download Membership Card
+        </button>
+      )} */}
     </div>
   );
 };
